@@ -55,11 +55,6 @@ export function initOpening() {
     opening.hidden = true;
     document.body.classList.remove("intro-open");
     locked.forEach(({ element, inert }) => (element.inert = inert));
-    if (automatic) {
-      try {
-        sessionStorage.setItem("secha_intro_seen", "1");
-      } catch {}
-    }
     if (opening.contains(document.activeElement))
       previousFocus?.focus({ preventScroll: true });
     document.dispatchEvent(new CustomEvent("secha:introclosed"));
@@ -187,10 +182,6 @@ export function initOpening() {
   motion.addEventListener("change", (event) => {
     if (event.matches && automatic) close();
   });
-  let seen = false;
-  try {
-    seen = Boolean(sessionStorage.getItem("secha_intro_seen"));
-  } catch {}
-  if (!seen && !motion.matches && !navigator.connection?.saveData) begin(true);
+  if (!motion.matches && !navigator.connection?.saveData) begin(true);
   return { replay: () => begin(false), close };
 }

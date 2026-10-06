@@ -1623,3 +1623,328 @@ body.intro-open {
   font: 400 30px var(--display);
   min-height: 44px;
 }
+.dna-section {
+  background: var(--ink);
+  color: var(--paper);
+}
+.dna-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.dna-section .eyebrow {
+  color: #c4a578;
+}
+.dna-section .section-lede {
+  color: #c7cacf;
+  margin: 25px 0;
+}
+.dna-section-meta {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  margin: 26px 0;
+}
+.dna-section .solid-link {
+  background: var(--paper);
+  color: var(--ink);
+}
+.dna-section-note {
+  font-size: 10px;
+  color: #b9bfc6;
+  margin-top: 20px;
+  max-width: 350px;
+}
+.dna-section-visual {
+  position: relative;
+  margin: 0;
+}
+.dna-section-visual > img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+.dna-section-visual figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 30px;
+  background: linear-gradient(transparent, #152536e8);
+  color: var(--paper);
+}
+.dna-section-visual figcaption > span {
+  font-size: 9px;
+  letter-spacing: 0.17em;
+}
+.dna-section-visual strong {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  margin: 10px 0;
+}
+.dna-section-visual figcaption > div {
+  font-size: 10px;
+}
+.dna-dialog {
+  border: 0;
+  padding: 36px;
+  width: min(740px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  background: var(--white);
+  color: var(--ink);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.dna-dialog::backdrop {
+  background: #0a142ab3;
+}
+.dna-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  color: var(--ink);
+  width: 44px;
+  height: 44px;
+  font-size: 28px;
+}
+.dna-dialog .eyebrow {
+  margin-bottom: 15px;
+}
+.dna-dialog h2 {
+  font-size: 30px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  padding-right: 20px;
+  line-height: 1.2;
+}
+.dna-dialog > progress {
+  display: block;
+  width: 100%;
+  height: 5px;
+  accent-color: var(--bronze);
+  margin: 25px 0;
+}
+.dna-step {
+  font-size: 10px;
+  color: var(--bronze);
+  letter-spacing: 0.07em;
+  margin-bottom: 12px;
+}
+.dna-dialog h3 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+.dna-dialog h3:focus {
+  outline: none;
+}
+.dna-question-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 20px;
+}
+.dna-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.dna-options button {
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 18px;
+  text-align: left;
+  color: var(--ink);
+  min-height: 100px;
+}
+.dna-options strong {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+.dna-options span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.dna-options button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.dna-options button[aria-pressed="true"] span {
+  color: #c7cacf;
+}
+.dna-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+.dna-actions button {
+  min-height: 44px;
+}
+.dna-dialog button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.dna-result {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 28px;
+  margin-bottom: 25px;
+}
+.dna-result > span {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: #c4a578;
+}
+.dna-result h3 {
+  font-size: 32px;
+  margin-top: 12px;
+}
+.dna-traits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.dna-traits strong {
+  font-size: 11px;
+  font-weight: 400;
+}
+.dna-traits small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.5;
+  margin-top: 7px;
+  color: #c7cacf;
+}
+.dna-dialog h4 {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.dna-recommendations {
+  padding-left: 18px;
+  margin: 0 0 18px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.dna-recommendations li {
+  margin-bottom: 8px;
+}
+.dna-note {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 15px 0;
+}
+#dna-lead-form {
+  border-top: 1px solid var(--line);
+  margin-top: 25px;
+  padding-top: 25px;
+}
+.dna-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+.dna-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 11px;
+  margin: 6px 0 20px;
+  cursor: pointer;
+}
+.dna-consent input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--bronze);
+}
+.dna-dialog input[aria-invalid="true"] {
+  outline: 1px solid #a22c2c;
+}
+.dna-dialog :focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 4px;
+}
+#dna-status {
+  font-size: 12px;
+  color: var(--bronze);
+  margin-top: 15px;
+}
+.dna-success {
+  border: 1px solid var(--line);
+  padding: 25px;
+  margin-top: 25px;
+}
+.dna-success p {
+  font-size: 12px;
+}
+@media (max-width: 1200px) and (min-width: 851px) {
+  .header-cta {
+    display: none;
+  }
+  .desktop-nav {
+    gap: 18px;
+  }
+}
+@media (max-width: 850px) {
+  .dna-section-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .dna-section-visual > img {
+    height: 400px;
+  }
+}
+@media (max-width: 480px) {
+  .dna-section-visual > img {
+    height: 350px;
+  }
+  .dna-dialog {
+    padding: 30px 20px;
+    width: calc(100% - 20px);
+    max-height: calc(100dvh - 20px);
+  }
+  .dna-dialog h2 {
+    font-size: 27px;
+  }
+  .dna-dialog h3 {
+    font-size: 24px;
+  }
+  .dna-question-image {
+    height: 150px;
+  }
+  .dna-options {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .dna-options button {
+    min-height: 84px;
+    padding: 14px;
+  }
+  .dna-traits {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dna-result {
+    padding: 22px;
+  }
+  .dna-fields {
+    grid-template-columns: 1fr;
+  }
+  .dna-actions button {
+    font-size: 10px;
+    padding: 12px 15px;
+  }
+}

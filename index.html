@@ -129,6 +129,16 @@
         <button
           class="nav-simulator"
           type="button"
+          data-open-dna
+          aria-haspopup="dialog"
+          aria-controls="style-dna-modal"
+        >
+          <span class="lang-en">Style DNA</span
+          ><span class="lang-id">Style DNA</span>
+        </button>
+        <button
+          class="nav-simulator"
+          type="button"
           data-open-simulator
           aria-haspopup="dialog"
           aria-controls="loan-simulator"
@@ -206,6 +216,16 @@
         ><span class="lang-en">Contact</span
         ><span class="lang-id">Kontak</span></a
       >
+      <button
+        class="nav-simulator"
+        type="button"
+        data-open-dna
+        aria-haspopup="dialog"
+        aria-controls="style-dna-modal"
+      >
+        <span class="lang-en">Style DNA</span
+        ><span class="lang-id">Style DNA</span>
+      </button>
       <button
         class="nav-simulator"
         type="button"
@@ -398,6 +418,98 @@
               </p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="style-dna"
+        class="dna-section section-pad"
+        aria-labelledby="style-dna-section-title"
+      >
+        <div class="section-shell dna-section-grid">
+          <div class="dna-section-copy">
+            <p class="eyebrow">
+              <span class="lang-en">A home with your personality</span
+              ><span class="lang-id">Rumah dengan karakter Anda</span>
+            </p>
+            <h2 class="section-title" id="style-dna-section-title">
+              <span class="lang-en">Find your<br />furniture DNA.</span
+              ><span class="lang-id">Temukan DNA<br />furnitur Anda.</span>
+            </h2>
+            <p class="section-lede">
+              <span class="lang-en"
+                >Soft curves or sculptural lines? Quiet corners or room for
+                everyone? Discover the pieces that feel like you.</span
+              ><span class="lang-id"
+                >Lengkungan lembut atau garis skulptural? Sudut tenang atau
+                ruang untuk semua? Temukan furnitur yang terasa seperti
+                Anda.</span
+              >
+            </p>
+            <div class="dna-section-meta">
+              <span class="lang-en"
+                >8 questions · 16 style signatures · About 2 minutes</span
+              ><span class="lang-id"
+                >8 pertanyaan · 16 gaya personal · Sekitar 2 menit</span
+              >
+            </div>
+            <button
+              class="solid-link"
+              type="button"
+              data-open-dna
+              aria-haspopup="dialog"
+              aria-controls="style-dna-modal"
+            >
+              <span class="lang-en">Discover my Style DNA</span
+              ><span class="lang-id">Temukan Style DNA saya</span
+              ><svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M4 16 16 4M4 4h12v12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </button>
+            <p class="dna-section-note">
+              <span class="lang-en"
+                >Your style result is free to explore. Share your brief only
+                when you choose.</span
+              ><span class="lang-id"
+                >Jelajahi hasil gaya Anda secara gratis. Bagikan brief hanya
+                jika Anda memilih.</span
+              >
+            </p>
+          </div>
+          <figure class="dna-section-visual">
+            <img
+              src="assets/archive-minimalist-living.jpg"
+              alt="A softly lit living room with a sculptural sofa and natural materials"
+              data-alt-en="A softly lit living room with a sculptural sofa and natural materials"
+              data-alt-id="Ruang keluarga bercahaya lembut dengan sofa skulptural dan material alami"
+              width="1200"
+              height="1200"
+              loading="lazy"
+            />
+            <figcaption>
+              <span>SECHA STYLE DNA</span
+              ><strong
+                ><span class="lang-en">Style is personal.</span
+                ><span class="lang-id">Gaya itu personal.</span></strong
+              >
+              <div>
+                <span class="lang-en">Warmth / Shape / Expression / Rhythm</span
+                ><span class="lang-id"
+                  >Kehangatan / Bentuk / Ekspresi / Ritme</span
+                >
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -1207,6 +1319,27 @@
         <p id="simulator-disclaimer" class="sim-disclaimer"></p>
       </div>
     </div>
+
+    <dialog id="style-dna-modal" class="dna-dialog" aria-labelledby="dna-title">
+      <button
+        class="dna-close"
+        type="button"
+        data-close-dna
+        aria-label="Close Style DNA"
+      >
+        ×
+      </button>
+      <p class="eyebrow">SECHA STYLE DNA</p>
+      <h2 id="dna-title"></h2>
+      <progress
+        id="dna-progress"
+        max="8"
+        value="0"
+        aria-label="Quiz progress"
+      ></progress>
+      <div id="dna-body"></div>
+      <p id="dna-status" role="status" aria-live="polite"></p>
+    </dialog>
 
     <script type="module" src="assets/app.js"></script>
   </body>

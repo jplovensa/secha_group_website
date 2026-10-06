@@ -82,8 +82,18 @@ The user requested https://www.themakeover.my/ as a sequence reference. The site
 
 ## Replayable intro and renovation planning
 
-The opening film has play/pause, seek, and footer replay controls on both pages. Its automatic run releases the page after a 2.5-second startup failure or an 8-second playback stall. Reduced-motion and Save-Data skip the automatic intro. Manual replay stays open for playback control. Studio WebGL loads when a showroom section approaches the viewport, after the intro closes.
+The opening film has play/pause, seek, and footer replay controls on both pages and runs on each full page load. Its automatic run releases the page after a 2.5-second startup failure or an 8-second playback stall. Reduced-motion and Save-Data skip the automatic intro. Manual replay stays open for playback control. Studio WebGL loads when a showroom section approaches the viewport, after the intro closes.
 
 `assets/loan-model.js` contains independent flat-interest and reducing-balance calculations. The guided simulator uses editable **example** assumptions (12% p.a. / 1% monthly equivalent, reducing balance, 2% one-time SECHA service fee, 0% adjustable bank/admin fee, 12 months); financing input spans IDR 20–500 million. These are owner-provided calculator defaults, not confirmed Amar Bank terms. Insurance is excluded; insurance and early repayment follow the financing partner. Fees are paid upfront and excluded from the monthly payment. No old rate table was found in the uploaded site files. The simulator opens from its own desktop/mobile Loan Simulator menu item and finishes independently. The Amar Bank banner and financing CTAs open the separate reference form and bank handoff. The simulator does not submit an application or provide an approval.
 
 The media section links to the owner-provided SpotNews article. Specific recognition cards are built but held from public display until independently sourced. See [research/recognition.md](research/recognition.md) for the research blocker and verification requirements.
+
+## Style DNA quiz and lead delivery
+
+The home page has a Style DNA section and desktop/mobile menu action. Eight paired questions produce one of 16 design signatures across palette, form, expression, and room use. It is a furniture preference game, not a psychological test. For mixed pairs, the first response sets the signature and the result explicitly marks that dimension as balanced. The result appears before contact collection.
+
+Lead capture requires a public browser-safe endpoint in `assets/lead-config.js`. The endpoint is currently unset while the owner supplies its URL/contract. Submission is disabled until configured; the result remains usable. Never add a private API key to frontend source. The initial adapter expects a JSON POST, a successful HTTP 2xx response, and CORS permission for the deployed site origin. Configure the adapter to the actual endpoint contract before enabling it.
+
+The proposed JSON payload contains `source: "secha_style_dna"`, `name`, `phone`, `location`, explicit `consent`, `language`, `styleCode`, `styleName`, `answers` (eight 0/1 values), `preferences` (labels and balanced flags), and `recommendations`. No contact data is stored in browser storage. Closing the modal clears the contact inputs; failed submission retains details for retry. No lead is reported received before a successful endpoint response. Use the endpoint's own validation, abuse protection, retention controls, and server-side credentials.
+
+The shared opening film now attempts automatic playback on every full page load/refresh, including Studio+. Reduced-motion and Save-Data preferences still skip automatic playback; media errors and autoplay restrictions still release the page safely. Manual replay remains available.

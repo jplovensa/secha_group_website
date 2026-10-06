@@ -49,3 +49,13 @@ Media includes the owner-provided SpotNews link. Five specific recognition cards
 The loan simulator is now an independent desktop/mobile menu action. Completing it closes the planning dialog without opening the bank reference form. Amar Bank banner and financing CTAs open the separate bank reference form; the extra bank logo/card beneath the banner is removed. Mobile simulator closure restores focus to the visible menu toggle.
 
 Nine unit tests pass. Chromium verified these independent flows, mobile menu closing and focus restoration, removed logo/card, and no document overflow at 320/390/900/1024/1440px, with zero browser errors.
+
+## Style DNA and repeat intro
+
+Removed the session marker from automatic intro playback: root and Studio+ attempt the film on every page load/refresh, including tabs with the former marker already set. Reduced-motion/Save-Data and stalled-playback recovery still apply.
+
+Style DNA adds a responsive home-page section and desktop/mobile menu dialog. Eight visual questions span four paired dimensions, giving 16 signatures with furniture recommendations. Results precede contact collection. Mixed answers are explicitly marked balanced; the first paired answer breaks a tie. This is presented as a design preference game, not an MBTI or psychological diagnosis.
+
+Twelve unit tests pass. Chromium checked both-page reload playback, answer gating and back/edit, result scoring, bilingual text, native modal/focus behavior, contact escaping/clearing, and no page/dialog overflow at 320/390/768/900/1024/1440px. A local mock endpoint checked consent gating, JSON payload, confirmed HTTP success, and failure/retry without losing contact fields. No actual leads were sent during testing.
+
+The owner selected endpoint delivery rather than WhatsApp. The endpoint URL, request contract, and CORS support remain required. The frontend adapter and form are built; production submission stays disabled until configured. No real lead capture or endpoint integration is claimed yet. A pending endpoint message is shown instead of false success.
