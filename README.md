@@ -86,7 +86,7 @@ The opening film has play/pause, seek, and footer replay controls on both pages 
 
 `assets/loan-model.js` contains independent flat-interest and reducing-balance calculations. The guided simulator uses editable **example** assumptions (12% p.a. / 1% monthly equivalent, reducing balance, 2% one-time SECHA service fee, 0% adjustable bank/admin fee, 12 months); financing input spans IDR 20–500 million. These are owner-provided calculator defaults, not confirmed Amar Bank terms. Insurance is excluded; insurance and early repayment follow the financing partner. Fees are paid upfront and excluded from the monthly payment. No old rate table was found in the uploaded site files. The simulator opens from its own desktop/mobile Loan Simulator menu item and finishes independently. The Amar Bank banner and financing CTAs open the separate reference form and bank handoff. The simulator does not submit an application or provide an approval.
 
-The media section links to the owner-provided SpotNews article. Specific recognition cards are built but held from public display until independently sourced. See [research/recognition.md](research/recognition.md) for the research blocker and verification requirements.
+The Media & Recognition section uses the owner-provided publication catalogue across Media Coverage, Awards & Recognition, and Press Releases. Cards preserve supplied titles, publishers, and exact URLs; Forbes is identified as PDF. Forbes India and D Globalist share one DGEMS recognition identifier, while CEO awards name Josephine Petra Lovensa. See [research/recognition.md](research/recognition.md) for source provenance.
 
 ## Style DNA quiz and lead delivery
 

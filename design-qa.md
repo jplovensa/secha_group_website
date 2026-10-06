@@ -79,3 +79,9 @@ Verified true alpha transparency in the replacement WebP (transparent corner pix
 Added a bilingual design concept beside the Featured Work logos, stacking below them on mobile. The copy is grounded in the uploaded GSIH/MCC proposal: lightweight EPS partitions and hard-coated seating/stage modules (pages 2–5), Candi Badut ornament CNC-cut from EPS with LED backlighting (page 3), media walls and planned utilities (pages 4–5), and modular conference furniture (page 8). It is labelled as the proposal's concept and does not assert verified installed specifications.
 
 Chromium verified desktop side-by-side placement, mobile stacking, three principles, English/Indonesian copy, image decoding, no page overflow at 320/390/768/1024/1440px, and zero browser errors. Desktop preview inspected. No financial logic or lead-delivery changes were made.
+
+## Owner-supplied Media & Recognition catalogue
+
+Replaced provisional media entries with eleven exact owner-supplied publisher/title/URL records, grouped into Media Coverage, Awards & Recognition, and Press Releases. The supplied labels are now card headings; publisher and category remain visible. Forbes is marked PDF; the D Globalist `4311a1a2_page=4` parameter is preserved. Forbes/D Globalist share one DGEMS identifier and a visible explanation that they document the same recognition. Women’s Tabloid/APAC Insider identify Josephine Petra Lovensa as recipient. Press-release sources remain explicitly labelled.
+
+Chromium verified eleven cards across the three categories, counts 3/4/4, exact D Globalist parameter, PDF labelling, both CEO recipient labels, DGEMS explanation, press labels, Indonesian presentation, no overflow at 320/390/768/900/1024/1440px, and zero browser errors. External pages were not fetched or independently verified in this change.
