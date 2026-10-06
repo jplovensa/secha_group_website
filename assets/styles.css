@@ -513,7 +513,7 @@ input {
   display: block;
   width: var(--shell);
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 32px;
 }
 .amar-banner img {
   width: 100%;
