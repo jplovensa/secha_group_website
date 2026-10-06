@@ -64,6 +64,12 @@ The existing host serves both routes:
 
 No separate subdomain, DNS record, hosting service or paid hosting plan is required for the folder route. In Settings → Pages, the main repository's source must be **GitHub Actions**. Existing custom-domain and DNS configuration must already point to this site; a push alone does not verify live publication. For another static host, deploy the generated `_site/` directory rather than the repository root.
 
+### Vercel hosting
+
+`www.sechahome.com` responds through Vercel. `vercel.json` selects a static build using `bash tools/build-site.sh` and publishes `_site/`. This build checks out the public Studio+ `main` branch in a temporary folder, builds/tests both apps, and packages them together. The Vercel project must be connected to `jplovensa/secha_group_website`, production branch `main`, with the repository root as its Root Directory. No SPA rewrite should replace `/studio/` with the home page.
+
+Vercel builds on main-repository pushes. Studio+-only pushes require a Vercel redeploy (with build cache disabled if its source is unchanged) or a configured Vercel Deploy Hook; the GitHub Pages hourly sync does not redeploy Vercel. No Vercel credential or deploy-hook URL is stored in this repository. Domain/project access is needed to verify the live deployment and configure an automatic Vercel trigger.
+
 For a combined local preview:
 
 ```sh
