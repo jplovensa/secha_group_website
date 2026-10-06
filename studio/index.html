@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SECHA Studio+ | Interior Architecture</title>
+    <meta
+      name="description"
+      content="Explore SECHA Studio+ interior design directions, materials, and packages. Build a personal design brief and connect with the studio."
+    />
+    <link rel="icon" href="../assets/favicon.png" />
+
+    <link rel="stylesheet" href="../assets/fonts.css" />
+    <link rel="stylesheet" href="assets/utilities.css" />
+    <link rel="stylesheet" href="assets/custom.css" />
+  </head>
+  <body class="selection:bg-white selection:text-black">
+    <noscript
+      ><p style="padding: 100px 24px 24px">
+        Interactive previews need JavaScript. You can still browse the page or
+        <a href="mailto:info@sechahomes.com">email the studio</a>.
+      </p></noscript
+    >
+    <!-- Global Modal -->
+    <div
+      id="global-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+      inert
+      class="fixed inset-0 z-[900] hidden items-center justify-center p-4"
+    >
+      <div
+        id="modal-backdrop"
+        data-action="closeModal"
+        data-args=""
+        class="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0"
+      ></div>
+      <div
+        id="modal-content-wrapper"
+        class="relative w-full max-w-2xl bg-zinc-950 border border-zinc-800 p-8 md:p-12 opacity-0 transform translate-y-8 flex flex-col shadow-2xl"
+      >
+        <button
+          aria-label="Close dialog"
+          data-action="closeModal"
+          data-args=""
+          class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center text-zinc-500 hover:text-white transition-colors cursor-hover"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <p
+          id="modal-subtitle"
+          class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2"
+        ></p>
+        <h3
+          id="modal-title"
+          class="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white mb-8"
+        ></h3>
+        <div id="modal-body" class="text-sm md:text-base text-zinc-400"></div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50 mix-blend-difference text-white opacity-0 -translate-y-10"
+    >
+      <a
+        href="../"
+        class="text-xl font-black tracking-tighter uppercase"
+        aria-label="Back to SECHA home"
+        >SECHA / STUDIO+</a
+      >
+      <div
+        class="hidden md:flex gap-8 text-sm font-medium tracking-wide uppercase"
+      >
+        <a
+          href="#designers"
+          class="hover:opacity-50 transition-opacity cursor-hover"
+          >Philosophy</a
+        >
+        <a
+          href="#designers"
+          class="hover:opacity-50 transition-opacity cursor-hover"
+          >Designers</a
+        >
+        <a
+          href="#moodboards"
+          class="hover:opacity-50 transition-opacity cursor-hover"
+          >Materials</a
+        >
+        <a
+          href="#process"
+          class="hover:opacity-50 transition-opacity cursor-hover"
+          >Process</a
+        >
+      </div>
+      <button
+        data-action="openModal"
+        data-args="lets-talk"
+        class="px-5 py-2 border border-white rounded-full text-xs font-bold uppercase hover:bg-white hover:text-black transition-colors cursor-hover"
+      >
+        Let's Talk
+      </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden border-b border-zinc-800 bg-[#050505]"
+    >
+      <div
+        id="hero-content"
+        class="flex flex-col items-center text-center z-10 w-full px-4"
+      >
+        <div class="hero-text mb-2">
+          <div
+            class="hero-text-inner text-xs font-mono text-zinc-500 uppercase tracking-[0.3em]"
+          >
+            Interior Architecture & Design
+          </div>
+        </div>
+        <div class="hero-text">
+          <div
+            class="hero-text-inner text-[14vw] md:text-[12vw] font-black uppercase tracking-tighter leading-[0.85] text-white"
+          >
+            SECHA
+          </div>
+        </div>
+        <div class="hero-text">
+          <div
+            class="hero-text-inner text-[14vw] md:text-[12vw] font-black uppercase tracking-tighter leading-[0.85] text-transparent"
+            style="-webkit-text-stroke: 1px rgba(255, 255, 255, 0.8)"
+          >
+            STUDIO+
+          </div>
+        </div>
+        <p
+          id="hero-sub"
+          class="mt-8 text-sm md:text-base font-medium text-zinc-400 max-w-md uppercase tracking-widest opacity-0"
+        >
+          We believe your space should tell your story.
+        </p>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-8 text-xs font-mono text-zinc-600 uppercase tracking-widest hidden md:block opacity-0"
+        id="hero-dec-1"
+      >
+        SYS.V.0.9.1 <br />
+        VIRTUAL ENVIRONMENT
+      </div>
+      <div
+        class="absolute bottom-8 right-8 text-xs font-mono text-zinc-600 uppercase tracking-widest text-right hidden md:block opacity-0"
+        id="hero-dec-2"
+      >
+        BASED IN <br />
+        SOUTH TANGERANG, BANTEN
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div
+      class="w-full py-4 border-b border-zinc-800 bg-zinc-900 overflow-hidden flex whitespace-nowrap"
+    >
+      <div
+        class="flex gap-8 text-xs font-bold uppercase tracking-[0.3em] text-zinc-500 animate-marquee w-[200%]"
+      >
+        <span>✦ INTERIOR ARCHITECTURE</span><span>✦ BESPOKE DESIGN</span
+        ><span>✦ SECHA STUDIO+</span><span>✦ CURATED SPACES</span>
+        <span>✦ INTERIOR ARCHITECTURE</span><span>✦ BESPOKE DESIGN</span
+        ><span>✦ SECHA STUDIO+</span><span>✦ CURATED SPACES</span>
+        <span>✦ INTERIOR ARCHITECTURE</span><span>✦ BESPOKE DESIGN</span
+        ><span>✦ SECHA STUDIO+</span><span>✦ CURATED SPACES</span>
+        <span>✦ INTERIOR ARCHITECTURE</span><span>✦ BESPOKE DESIGN</span
+        ><span>✦ SECHA STUDIO+</span><span>✦ CURATED SPACES</span>
+      </div>
+    </div>
+
+    <!-- Philosophy Bento -->
+    <section
+      id="designers"
+      class="w-full max-w-[1440px] mx-auto p-4 md:p-8 pt-24 pb-24"
+    >
+      <div class="flex justify-between items-end mb-8">
+        <h2
+          class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none reveal-item"
+        >
+          01.<br />The Vision
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Bento 1 -->
+        <div
+          tabindex="0"
+          role="button"
+          data-action="openModal"
+          data-args="why-we-exist"
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group cursor-hover md:col-span-2 min-h-[350px] reveal-item"
+        >
+          <div
+            class="absolute inset-0 z-0 opacity-20 grayscale group-hover:opacity-40 transition-opacity duration-700"
+          >
+            <img
+              src="../assets/project-tropical.jpg"
+              alt="Bridging the Gap"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Why We Exist
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Bridging the Gap
+              </h3>
+            </div>
+            <div
+              class="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all shrink-0"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            "Design shouldn't be intimidating. We exist to bridge the gap
+            between your dream space and reality. We don't just decorate rooms;
+            we craft sanctuaries where you can truly breathe, live, and be
+            yourself."
+          </p>
+        </div>
+        <!-- Bento 2 -->
+        <div
+          tabindex="0"
+          role="button"
+          data-action="openModal"
+          data-args="modern-elegance"
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group cursor-hover col-span-1 min-h-[350px] reveal-item"
+        >
+          <div
+            class="absolute inset-0 z-0 opacity-20 grayscale group-hover:opacity-40 transition-opacity duration-700"
+          >
+            <img
+              src="../assets/project-minimalist.jpg"
+              alt="Modern Elegance"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Daffa • The Architect of Form
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Modern Elegance
+              </h3>
+            </div>
+            <div
+              class="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all shrink-0"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            For those who love clean lines, clutter-free spaces, and a touch of
+            everyday luxury. Daffa focuses on making your space feel expansive,
+            calm, and effortlessly polished.
+          </p>
+        </div>
+        <!-- Bento 3 -->
+        <div
+          tabindex="0"
+          role="button"
+          data-action="openModal"
+          data-args="cozy-functional"
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group cursor-hover col-span-1 min-h-[350px] reveal-item"
+        >
+          <div
+            class="absolute inset-0 z-0 opacity-20 grayscale group-hover:opacity-40 transition-opacity duration-700"
+          >
+            <img
+              src="../assets/project-luxury.jpg"
+              alt="Cozy & Functional"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Audina • The Soul of Space
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Cozy & Functional
+              </h3>
+            </div>
+            <div
+              class="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all shrink-0"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            For those who want their home to feel like a warm hug. Audina blends
+            Japandi warmth with practical, user-first design to create layouts
+            that flow naturally with your daily routine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Moodboard Studio (Carousel) -->
+    <section
+      id="moodboards"
+      class="w-full relative min-h-screen bg-[#050505] border-t border-zinc-800 flex flex-col md:flex-row overflow-hidden"
+    >
+      <!-- 3D Canvas Background Area -->
+      <div class="absolute inset-0 z-0 w-full h-full">
+        <div id="moodboard-canvas" class="w-full h-full outline-none"></div>
+        <!-- Overlay Gradients -->
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] pointer-events-none opacity-80"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent pointer-events-none"
+        ></div>
+      </div>
+
+      <!-- Interactive UI Overlay -->
+      <div
+        class="relative z-10 w-full max-w-[1440px] mx-auto p-4 md:p-8 flex flex-col justify-between h-screen pointer-events-none"
+      >
+        <!-- Header -->
+        <div class="mt-24 pointer-events-auto reveal-item">
+          <h2
+            class="text-sm font-mono text-zinc-500 uppercase tracking-[0.3em] mb-2"
+          >
+            Material Exploration
+          </h2>
+          <h3
+            class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white"
+          >
+            Curated<br />Moodboards.
+          </h3>
+          <p
+            class="max-w-md text-sm text-zinc-400 font-medium uppercase tracking-wide mt-6 leading-relaxed"
+          >
+            Step into the interactive 3D environment to feel the textures and
+            select the exact material finishes that speak to your soul.
+          </p>
+        </div>
+
+        <!-- Selection Interface -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end pb-12 pointer-events-auto"
+        >
+          <!-- Navigation List -->
+          <div class="md:col-span-4 flex flex-col gap-2" id="moodboard-nav">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Details Panel -->
+          <div class="md:col-span-8">
+            <div
+              id="moodboard-details"
+              class="border border-zinc-800 bg-zinc-950/80 backdrop-blur-md p-8 md:p-12 relative overflow-hidden transition-all duration-300"
+            >
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3D Finishing Options Section (Vignette) -->
+    <section
+      id="finishing-studio"
+      class="w-full relative min-h-screen bg-[#0a0a0a] border-t border-zinc-800 flex flex-col md:flex-row overflow-hidden"
+    >
+      <!-- Interactive 3D Canvas -->
+      <div class="relative w-full h-[50vh] md:h-screen md:w-2/3 cursor-move">
+        <div id="vignette-canvas" class="absolute inset-0 w-full h-full"></div>
+
+        <!-- Absolute Title Overlay -->
+        <div
+          class="absolute top-8 left-8 md:top-12 md:left-12 pointer-events-none mix-blend-difference text-white"
+        >
+          <p
+            id="vignette-subtitle"
+            class="text-xs font-mono uppercase tracking-[0.3em] mb-2"
+          >
+            The Architect
+          </p>
+          <h2
+            id="vignette-title"
+            class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none"
+          >
+            Noir Brutalism
+          </h2>
+        </div>
+      </div>
+
+      <!-- Sidebar UI -->
+      <div
+        class="relative w-full md:w-1/3 bg-zinc-950 border-t md:border-t-0 md:border-l border-zinc-800 flex flex-col p-8 md:p-12 z-10 min-h-[50vh] md:h-screen"
+      >
+        <div class="flex justify-between items-center mb-8">
+          <h3 class="text-2xl font-black uppercase tracking-tighter text-white">
+            Finishing Options
+          </h3>
+          <!-- Cart Toggle -->
+          <button
+            data-action="toggleCart"
+            data-args=""
+            class="flex items-center gap-2 px-4 py-2 border border-zinc-700 hover:border-white hover:text-white transition-colors text-xs font-bold uppercase tracking-widest text-zinc-400 group relative cursor-hover"
+          >
+            Cart (<span id="cart-count">0</span>)
+            <span
+              id="cart-indicator"
+              class="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-pulse hidden"
+            ></span>
+          </button>
+        </div>
+
+        <!-- Dynamic Moodboard Tabs -->
+        <div class="mb-10 flex-shrink-0">
+          <p
+            class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2"
+          >
+            1. Select Archetype
+          </p>
+          <div class="flex flex-wrap gap-2" id="archetype-tabs">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Material Selection -->
+        <div class="flex-grow overflow-y-auto pr-2 pb-4">
+          <p
+            class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4 border-b border-zinc-800 pb-2"
+          >
+            2. Surface Finish
+          </p>
+          <div class="flex flex-col gap-3" id="material-list">
+            <!-- Populated by JS -->
+          </div>
+          <p class="text-sm text-zinc-400 font-medium mt-6 leading-relaxed">
+            Expertly crafted to reflect our studio's core aesthetic. This
+            material anchors the room with defining presence.
+          </p>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-zinc-800 flex-shrink-0">
+          <button
+            data-action="addToCart"
+            data-args=""
+            id="btn-add-cart"
+            class="w-full py-5 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors flex justify-center items-center gap-2 cursor-hover"
+          >
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Cart Drawer Overlay -->
+        <div
+          id="cart-drawer"
+          aria-label="Material shortlist"
+          aria-hidden="true"
+          inert
+          class="absolute inset-0 bg-zinc-950 z-50 flex flex-col p-8 md:p-12 border-l border-zinc-800 transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+        >
+          <div
+            class="flex justify-between items-center mb-8 border-b border-zinc-800 pb-8"
+          >
+            <h3
+              class="text-3xl font-black uppercase tracking-tighter text-white"
+            >
+              Your Cart
+            </h3>
+            <button
+              aria-label="Close material shortlist"
+              data-action="toggleCart"
+              data-args=""
+              class="w-10 h-10 border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-colors rounded-full shrink-0 cursor-hover"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div
+            id="cart-items"
+            class="flex-grow overflow-y-auto flex flex-col gap-4"
+          >
+            <!-- Populated by JS -->
+          </div>
+
+          <div
+            id="cart-footer"
+            class="mt-8 pt-8 border-t border-zinc-800 hidden"
+          >
+            <button
+              data-action="buildDesignBrief"
+              data-args=""
+              class="w-full py-5 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors flex justify-center items-center cursor-hover"
+            >
+              Proceed to Design Allocation
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Process Bento -->
+    <section
+      id="process"
+      class="w-full max-w-[1440px] mx-auto p-4 md:p-8 pt-24 pb-24"
+    >
+      <div class="flex justify-between items-end mb-8">
+        <h2
+          class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none reveal-item"
+        >
+          02.<br />How We Work
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Step 1 -->
+        <div
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group col-span-1 min-h-[350px] reveal-item cursor-hover"
+        >
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Step 01
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Getting to Know You
+              </h3>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            We start with a conversation. We listen to your needs, understand
+            how you live, and align our vision with your budget and space
+            realities.
+          </p>
+        </div>
+        <!-- Step 2 -->
+        <div
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group col-span-1 min-h-[350px] reveal-item cursor-hover"
+        >
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Step 02
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                The Vision
+              </h3>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            Your ideas turn into a visual plan. We create bespoke moodboards and
+            clear 2D layouts so you can see exactly how the space will be
+            utilized.
+          </p>
+        </div>
+        <!-- Step 3 -->
+        <div
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group col-span-1 min-h-[350px] reveal-item cursor-hover"
+        >
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Step 03
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Bringing It to Life
+              </h3>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            No more guessing. We provide high-quality 3D renders that show you
+            exactly what your finished room will look like before execution.
+          </p>
+        </div>
+        <!-- Step 4 -->
+        <div
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group md:col-span-2 min-h-[350px] reveal-item cursor-hover"
+        >
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Step 04
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                The Blueprint
+              </h3>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            We handle the technical details. You receive detailed engineering
+            drawings (DED) so contractors know exactly how to build the design
+            flawlessly.
+          </p>
+        </div>
+        <!-- Step 5 -->
+        <div
+          class="relative overflow-hidden p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-950 hover:bg-zinc-900 transition-colors group col-span-1 min-h-[350px] reveal-item cursor-hover"
+        >
+          <div class="relative z-10 flex justify-between items-start">
+            <div>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2"
+              >
+                Step 05
+              </p>
+              <h3
+                class="text-2xl font-black tracking-tighter text-white uppercase"
+              >
+                Making it Happen
+              </h3>
+            </div>
+          </div>
+          <p
+            class="relative z-10 text-zinc-400 font-medium max-w-lg mt-12 text-sm leading-relaxed"
+          >
+            The final handover. Take our plans to your builder, or transition
+            seamlessly into our bespoke furniture production.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Investment Pricing -->
+    <section
+      id="investment"
+      class="w-full max-w-[1440px] mx-auto p-4 md:p-8 pt-24 pb-24"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-8 reveal-item"
+      >
+        <h2
+          class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none"
+        >
+          03.<br />The Investment
+        </h2>
+        <p
+          class="max-w-xs text-sm text-zinc-400 font-medium uppercase tracking-wide mt-4 md:mt-0 text-left md:text-right"
+        >
+          Curated Design Tiers.<br />Clear & Honest Pricing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Lite -->
+        <div
+          class="p-8 border border-zinc-800 bg-zinc-950 flex flex-col hover:bg-zinc-800 transition-colors group relative reveal-item cursor-hover"
+        >
+          <h4 class="text-xl font-black uppercase tracking-tighter mb-2">
+            The Lite Tier
+          </h4>
+          <p
+            class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8"
+          >
+            From IDR 1,000,000
+          </p>
+          <ul class="flex-grow space-y-3 mb-12">
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Concept & Moodboard
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> 2D Floorplan Layout
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 border border-zinc-700 text-zinc-400 group-hover:text-white group-hover:border-white uppercase text-xs font-bold tracking-widest transition-all cursor-hover"
+            data-action="selectTier"
+            data-args="Lite"
+          >
+            Select Lite
+          </button>
+        </div>
+        <!-- Pro -->
+        <div
+          class="p-8 border border-zinc-400 bg-zinc-900 flex flex-col hover:bg-zinc-800 transition-colors group relative reveal-item cursor-hover"
+        >
+          <div
+            class="absolute top-0 right-0 bg-white text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1"
+          >
+            Most Popular
+          </div>
+          <h4 class="text-xl font-black uppercase tracking-tighter mb-2">
+            The Pro Tier
+          </h4>
+          <p
+            class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8"
+          >
+            From IDR 2,000,000
+          </p>
+          <ul class="flex-grow space-y-3 mb-12">
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Concept & Moodboard
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> 2D Floorplan Layout
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Color Palette & Materials
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> High-Res 3D Renders
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Engineering Design (DED)
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 border border-white text-white uppercase text-xs font-bold tracking-widest transition-all cursor-hover"
+            data-action="selectTier"
+            data-args="Pro"
+          >
+            Select Pro
+          </button>
+        </div>
+        <!-- Premium -->
+        <div
+          class="p-8 border border-zinc-800 bg-zinc-950 flex flex-col hover:bg-zinc-800 transition-colors group relative reveal-item cursor-hover"
+        >
+          <h4 class="text-xl font-black uppercase tracking-tighter mb-2">
+            The Premium Tier
+          </h4>
+          <p
+            class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-8"
+          >
+            From IDR 2,600,000
+          </p>
+          <ul class="flex-grow space-y-3 mb-12">
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Concept & Moodboard
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> 2D Floorplan Layout
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Color Palette & Materials
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> High-Res 3D Renders
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Engineering Design (DED)
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Bill of Quantities (BOQ)
+            </li>
+            <li
+              class="text-sm font-medium text-zinc-300 flex items-start gap-2"
+            >
+              <span class="text-white">✓</span> Curated Shopping List
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 border border-zinc-700 text-zinc-400 group-hover:text-white group-hover:border-white uppercase text-xs font-bold tracking-widest transition-all cursor-hover"
+            data-action="selectTier"
+            data-args="Premium"
+          >
+            Select Premium
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive System Onboarding -->
+    <section
+      id="onboarding"
+      class="w-full max-w-[1440px] mx-auto p-4 md:p-8 py-24 border-t border-zinc-800"
+    >
+      <div
+        class="border border-zinc-800 bg-zinc-950 p-8 md:p-16 relative overflow-hidden min-h-[600px] flex flex-col justify-center"
+      >
+        <!-- Grid Background -->
+        <div
+          class="absolute inset-0 opacity-10 pointer-events-none"
+          style="
+            background-image: radial-gradient(
+              circle at 2px 2px,
+              white 1px,
+              transparent 0
+            );
+            background-size: 40px 40px;
+          "
+        ></div>
+
+        <div
+          class="absolute top-8 left-8 flex items-center gap-4 text-xs font-mono text-zinc-500 uppercase tracking-widest"
+        >
+          <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+          <span id="onboarding-indicator"
+            >System Initialization // Phase 01</span
+          >
+        </div>
+
+        <div
+          id="onboarding-container"
+          class="relative z-10 w-full max-w-4xl mx-auto mt-8 md:mt-0 transition-opacity duration-300"
+        >
+          <!-- Content injected via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full p-8 md:p-16 border-t border-zinc-800 bg-[#020202]">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div
+          class="text-[8vw] font-black uppercase tracking-tighter leading-none text-zinc-800"
+        >
+          SECHA+
+        </div>
+        <div
+          class="flex flex-col items-center md:items-end text-sm font-medium tracking-widest uppercase text-zinc-600"
+        >
+          <span class="mb-4"
+            >© 2026 SECHA Studio+ • Interior Architecture</span
+          >
+          <div class="flex gap-4">
+            <a href="../">SECHA Home</a
+            ><a href="mailto:info@sechahomes.com">Email Studio</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
+</html>
