@@ -73,3 +73,9 @@ Twelve unit tests pass. Chromium verified zero showcase video requests before Wa
 Reviewed the uploaded GSIH/MCC proposal as a visual reference. Its branding is compact and sits directly on the page background. Reduced the Featured Work logo block from a 650px image inside a white padded panel to a 340px desktop / 300px tablet / 260px mobile transparent asset, aligned to the content edge. Removed the white panel and its padding. The uploaded proposal remains a reference document and is not published as site content.
 
 Verified true alpha transparency in the replacement WebP (transparent corner pixels), successful browser decoding, transparent container with zero padding, compact display widths, and no page overflow at 320/390/768/1440px. Mobile preview inspected against the proposal's restrained branding treatment. The replacement web asset is approximately 186KiB.
+
+## Heritage meets tech concept panel
+
+Added a bilingual design concept beside the Featured Work logos, stacking below them on mobile. The copy is grounded in the uploaded GSIH/MCC proposal: lightweight EPS partitions and hard-coated seating/stage modules (pages 2–5), Candi Badut ornament CNC-cut from EPS with LED backlighting (page 3), media walls and planned utilities (pages 4–5), and modular conference furniture (page 8). It is labelled as the proposal's concept and does not assert verified installed specifications.
+
+Chromium verified desktop side-by-side placement, mobile stacking, three principles, English/Indonesian copy, image decoding, no page overflow at 320/390/768/1024/1440px, and zero browser errors. Desktop preview inspected. No financial logic or lead-delivery changes were made.
