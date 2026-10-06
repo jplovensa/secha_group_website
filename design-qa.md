@@ -67,3 +67,9 @@ Added the owner-supplied GSIH/MCC showcase with both logo references, a poster, 
 Found that the `.section-pad` class used by Media and Style DNA had no CSS definition. Added consistent desktop/mobile section padding, relaxed heading leading, and increased quiz progress/divider clearance. Media links now use an SVG icon instead of an unsupported font glyph, and the live media card labels support English/Indonesian.
 
 Twelve unit tests pass. Chromium verified zero showcase video requests before Watch, actual native playback, duration, seeking, logo decoding, section and title-to-divider clearances, Style DNA modal clearance, and no overflow at 320/390/768/1024/1440px. Desktop and mobile preview screenshots inspected.
+
+## Compact transparent project branding
+
+Reviewed the uploaded GSIH/MCC proposal as a visual reference. Its branding is compact and sits directly on the page background. Reduced the Featured Work logo block from a 650px image inside a white padded panel to a 340px desktop / 300px tablet / 260px mobile transparent asset, aligned to the content edge. Removed the white panel and its padding. The uploaded proposal remains a reference document and is not published as site content.
+
+Verified true alpha transparency in the replacement WebP (transparent corner pixels), successful browser decoding, transparent container with zero padding, compact display widths, and no page overflow at 320/390/768/1440px. Mobile preview inspected against the proposal's restrained branding treatment. The replacement web asset is approximately 186KiB.
