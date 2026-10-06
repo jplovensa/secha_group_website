@@ -1,3 +1,4 @@
+import { initOpening } from "../../assets/opening.js";
 import { initScenes } from "./scenes.js";
 import { initShowroom } from "./showroom.js";
 import { initModal } from "./modal.js";
@@ -27,3 +28,6 @@ document.addEventListener("keydown", (event) => {
     target.click();
   }
 });
+
+document.querySelector("#studio-year").textContent = new Date().getFullYear();
+initOpening();

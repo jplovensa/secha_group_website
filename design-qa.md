@@ -21,3 +21,17 @@ The supplied Studio+ page is retained as a distinct dark, Inter-based design. Lo
 Payment inputs and fabricated success were replaced with an explicit enquiry; no payment or booking is claimed. Runtime CDN scripts, Google Fonts, third-party images, the fake loading screen, and the custom cursor were removed. 3D work pauses outside the viewport; WebGL fallback preserves the selection workflow.
 
 Local result: passed. Live domain deployment: not performed.
+
+## Room-assembly intro revision
+
+A five-second assembly film replaces the earlier chair video. It assembles sofa modules, a stone coffee table, and oak shelving over the SECHA cream background. Playback-linked phases and progress are shared across both home and Studio+. Skip, Escape, media-failure fallback, natural completion, session behavior, and reduced-motion checks passed locally; the original page interaction suite still passes.
+
+The requested The Makeover sequence rebuild is blocked: the reference URL returned a network proxy CONNECT 403. No reference screenshots were captured, so no comparison or completed redesign is claimed. See `studio/reference-sequence.md` for the continuation scope.
+
+## Studio+ customer journey rebuild — latest revision
+
+Intentional SECHA redesign using the supplied architecture photos and Inter. Local desktop and mobile screenshots inspected. The page now prioritizes purpose, examples, design scope, delivery, and enquiry; the 3D showroom is optional further exploration.
+
+Verified locally: two actual 3D canvas renderers; all photos load; direction modals; duplicate-free material shortlist and removal; keyboard containment; five-step brief and reset; size/tier pricing; final WhatsApp brief; native FAQs; and no overflow at 320, 390, 768, 1024, and 1440px. Five unit tests cover estimates, safe enquiry encoding, and complete brief requirements, alongside the main financing tests. The shared intro's playback, skip, completion, reduced-motion, and failure checks pass.
+
+Latest local result: passed. Reference comparison remains unavailable because The Makeover website could not be accessed. The user authorized proceeding with a SECHA redesign and pushing it. Live deployment is distinct from the Git push and is not claimed here.

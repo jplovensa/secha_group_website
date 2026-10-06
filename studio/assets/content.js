@@ -52,3 +52,5 @@ MODAL_DATA["lets-talk"] = {
   title: "Let's talk",
   body: '<p class="mb-8">Tell us about your space, your goals, and your timeline. Contact the studio directly to discuss availability and scope.</p><div class="flex flex-wrap gap-4"><a class="px-6 py-4 bg-white text-black font-bold" href="https://wa.me/6282174072041" target="_blank" rel="noopener">WhatsApp the studio</a><a class="px-6 py-4 border border-zinc-600" href="mailto:info@sechahomes.com">Email the studio</a></div>',
 };
+
+MODAL_DATA["modern-elegance"].title = "Modern & Minimal";

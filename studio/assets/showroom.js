@@ -1,5 +1,7 @@
 import { MOODBOARDS, MATERIAL_PALETTES } from "./data.js";
 export function initShowroom(scenes, openModal) {
+  let lastCartFocus;
+  let lockedCartElements = [];
   let activeMoodboardIdx = 0,
     activeFinishingIdx = 0,
     activeMaterial = MATERIAL_PALETTES.architect[0],
@@ -30,22 +32,20 @@ export function initShowroom(scenes, openModal) {
                 <p class="text-sm md:text-base text-zinc-400 font-medium max-w-lg leading-relaxed relative z-10">${b.desc}</p>
                 <div class="mt-8 flex gap-4 relative z-10">
                     <button data-action="enterShowroom" data-args="${activeMoodboardIdx}" class="px-6 py-3 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors cursor-hover">Enter Showroom</button>
-                    <button data-action="technicalSpecs" class="px-6 py-3 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest hover:border-white hover:text-white transition-colors cursor-hover">Technical Specs</button>
+                    <button data-action="technicalSpecs" class="px-6 py-3 border border-zinc-700 text-zinc-300 text-xs font-bold uppercase tracking-widest hover:border-white hover:text-white transition-colors cursor-hover">Palette details</button>
                 </div>
             `;
-
-    // GSAP pop animation
   }
 
   function changeMoodboard(idx) {
+    if (!Number.isInteger(idx) || !MOODBOARDS[idx]) return;
     activeMoodboardIdx = idx;
     scenes.camera(idx);
     renderMoodboardUI();
-
-    // Update custom cursor targeting for new buttons
   }
 
   function enterShowroom(idx) {
+    if (!Number.isInteger(idx) || !MOODBOARDS[idx]) return;
     activeFinishingIdx = idx;
     const b = MOODBOARDS[activeFinishingIdx];
 
@@ -56,13 +56,11 @@ export function initShowroom(scenes, openModal) {
     renderFinishingUI();
     scenes.material(activeMaterial);
 
-    document
-      .getElementById("finishing-studio")
-      .scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-      });
+    document.getElementById("finishing-studio").scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
   }
 
   function renderFinishingUI() {
@@ -100,12 +98,14 @@ export function initShowroom(scenes, openModal) {
       .join("");
 
     const btn = document.getElementById("btn-add-cart");
-    btn.innerText = `Add to Cart // ${activeMaterial.name}`;
+    btn.innerText = `Save finish / ${activeMaterial.name}`;
   }
 
   function selectMaterial(matId) {
     const b = MOODBOARDS[activeFinishingIdx];
-    activeMaterial = MATERIAL_PALETTES[b.id].find((m) => m.id === matId);
+    const material = MATERIAL_PALETTES[b.id].find((m) => m.id === matId);
+    if (!material) return;
+    activeMaterial = material;
     renderFinishingUI();
     scenes.material(activeMaterial);
   }
@@ -117,10 +117,12 @@ export function initShowroom(scenes, openModal) {
     cart.push({ boardId: b.id, boardName: b.name, material: activeMaterial });
 
     const btn = document.getElementById("btn-add-cart");
-    btn.innerHTML = `<span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Added to Cart</span>`;
+    btn.innerHTML = `<span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Saved to shortlist</span>`;
 
     updateCartUI();
-    renderFinishingUI(); // refresh checkmarks
+    renderFinishingUI();
+    document.querySelector("#selection-status").textContent =
+      `${activeMaterial.name} saved to your shortlist.`;
   }
 
   function toggleCart() {
@@ -128,13 +130,24 @@ export function initShowroom(scenes, openModal) {
     const drawer = document.getElementById("cart-drawer");
     drawer.inert = !isCartOpen;
     drawer.setAttribute("aria-hidden", String(!isCartOpen));
+    document
+      .querySelector(".finishing-heading [data-action=toggleCart]")
+      .setAttribute("aria-expanded", String(isCartOpen));
     if (isCartOpen) {
       drawer.classList.remove("translate-x-full");
       drawer.classList.add("translate-x-0");
       updateCartUI();
+      lastCartFocus = document.activeElement;
+      lockedCartElements = [...document.body.children].filter(
+        (e) => e !== drawer && e.tagName !== "SCRIPT" && !e.inert,
+      );
+      lockedCartElements.forEach((e) => (e.inert = true));
+      drawer.querySelector("button").focus();
     } else {
       drawer.classList.remove("translate-x-0");
       drawer.classList.add("translate-x-full");
+      lockedCartElements.forEach((e) => (e.inert = false));
+      lastCartFocus?.focus();
     }
   }
 
@@ -145,11 +158,12 @@ export function initShowroom(scenes, openModal) {
       ? indicator.classList.remove("hidden")
       : indicator.classList.add("hidden");
 
+    document.dispatchEvent(new CustomEvent("studio:selectionschange"));
     const list = document.getElementById("cart-items");
     const footer = document.getElementById("cart-footer");
 
     if (cart.length === 0) {
-      list.innerHTML = `<p class="text-zinc-500 font-mono text-sm uppercase tracking-widest text-center mt-12">Your cart is empty.</p>`;
+      list.innerHTML = `<p class="text-zinc-500 font-mono text-sm uppercase tracking-widest text-center mt-12">Your shortlist is empty.</p>`;
       footer.classList.add("hidden");
     } else {
       list.innerHTML = cart
@@ -171,15 +185,27 @@ export function initShowroom(scenes, openModal) {
 
   function buildDesignBrief() {
     if (isCartOpen) toggleCart();
-    document
-      .getElementById("onboarding")
-      .scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "auto"
-          : "smooth",
-      });
+    document.getElementById("onboarding").scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
   }
 
+  document.addEventListener("keydown", (event) => {
+    if (!isCartOpen || event.key !== "Tab") return;
+    const items = [...document.querySelectorAll("#cart-drawer button")].filter(
+      (e) => e.getClientRects().length,
+    );
+    if (event.shiftKey && document.activeElement === items[0]) {
+      event.preventDefault();
+      items.at(-1).focus();
+    }
+    if (!event.shiftKey && document.activeElement === items.at(-1)) {
+      event.preventDefault();
+      items[0].focus();
+    }
+  });
   renderMoodboardUI();
   renderFinishingUI();
   updateCartUI();

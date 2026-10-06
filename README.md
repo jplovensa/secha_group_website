@@ -37,14 +37,14 @@ Two automated unit tests pass. Chromium checks passed for EN/ID persistence, mob
 
 All editable website typography uses self-hosted Inter. Text embedded in the supplied bank banner remains part of its image artwork.
 
-`assets/video/furniture-assembly.mp4` is a four-second, silent H.264 film showing the modular assembly of an oak lounge chair. It plays once per tab session, with Skip and Escape controls, a six-second maximum wait, and immediate bypass for reduced motion or data-saving preferences. Playback failures reveal the site. No JavaScript means the intro stays hidden.
+`assets/video/furniture-assembly.mp4` is a five-second, silent H.264 film showing a modular sofa, stone coffee table, and oak shelving assembling into a complete room. It plays once per tab session, with Skip and Escape controls, a seven-second maximum wait, and immediate bypass for reduced motion or data-saving preferences. Playback failures reveal the site. No JavaScript means the intro stays hidden.
 
 To reproduce the video, install Blender and FFmpeg and run from the repository root:
 
 ```sh
 blender -b -t 2 -P tools/render-preloader.py -- /tmp/secha-frames
-ffmpeg -y -framerate 24 -i /tmp/secha-frames/%04d.png -c:v libx264 -preset medium -crf 23 -pix_fmt yuv420p -movflags +faststart assets/video/furniture-assembly.mp4
-ffmpeg -y -i /tmp/secha-frames/0086.png -frames:v 1 assets/video/furniture-assembly-poster.jpg
+ffmpeg -y -f lavfi -i 'color=c=0xf4efe4:s=960x540:r=24:d=5' -framerate 24 -i /tmp/secha-frames/%04d.png -filter_complex '[0:v][1:v]overlay=shortest=1,format=yuv420p' -c:v libx264 -preset medium -crf 22 -movflags +faststart assets/video/furniture-assembly.mp4
+ffmpeg -y -f lavfi -i 'color=c=0xf4efe4:s=960x540:r=24' -i /tmp/secha-frames/0110.png -filter_complex '[0:v][1:v]overlay=shortest=1' -frames:v 1 assets/video/furniture-assembly-poster.jpg
 ```
 
 Studio+ uses a same-host folder route, `/studio/`, rather than a subdomain. No separate DNS record, hosting service, or rewrite rule is required when the existing host serves `studio/index.html`.
@@ -69,3 +69,13 @@ Studio+ prices are retained from the upload and are estimates pending studio con
 `.github/workflows/pages.yml` tests and publishes the committed static website on pushes to `main`. In repository Settings → Pages, the source must be **GitHub Actions**. The artifact contains only the public pages and their assets. Utility CSS is already compiled; no installation or third-party CDN is needed on the runner.
 
 The workflow's deployment result supplies the live URL. A custom domain such as `sechahome.com` requires that domain to be mapped to this repository's Pages site with matching DNS. The `/studio/` folder needs no extra mapping once the parent site is hosted. Do not assume domain configuration or deployment success from a Git push alone.
+
+The room-assembly intro is shared between home and Studio+ and plays once across both pages in a tab session. Its phase labels and progress follow video playback. Background inert states are preserved when it closes.
+
+## Studio+ customer journey rebuild
+
+Studio+ now uses the same navy, ivory, bronze, and self-hosted Inter system as SECHA. The page moves through home/property purpose, design examples, package scope and fees, delivery process, optional material exploration, a project brief, and FAQs.
+
+The five-step brief collects purpose → design direction → room size → design package → review. Package buttons preserve the full journey rather than skip essential choices. The material shortlist updates the final WhatsApp brief; it supports replacement and removal without duplicate entries. Dialogs and shortlist drawers trap keyboard focus and restore it on close.
+
+The user requested https://www.themakeover.my/ as a sequence reference. The site was inaccessible due to the environment network policy, so this revision uses a SECHA-specific customer journey and does not claim to reproduce that site's observed sequence. No reference content or screenshots were fabricated.

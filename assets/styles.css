@@ -873,3 +873,7 @@ body.intro-open{
 .opening__caption{
   font-size:9px}
 }
+
+.opening__stage{font-size:10px;color:var(--muted);margin-top:12px}
+.opening__track{width:140px;height:1px;background:var(--line);margin-top:15px}
+.opening__track span{display:block;height:100%;background:var(--bronze);transform:scaleX(0);transform-origin:left}
