@@ -1,0 +1,4 @@
+/* Shared SECHA typography; font files resolve through ../assets/fonts.css. */
+body, button, input, select, textarea, .font-mono {
+  font-family: Inter, Arial, sans-serif !important;
+}

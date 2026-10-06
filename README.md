@@ -49,36 +49,34 @@ ffmpeg -y -f lavfi -i 'color=c=0xf4efe4:s=960x540:r=24' -i /tmp/secha-frames/011
 
 Studio+ uses a same-host folder route, `/studio/`, rather than a subdomain. No separate DNS record, hosting service, or rewrite rule is required when the existing host serves `studio/index.html`.
 
-## Studio+ on the same domain
+## Studio+ from its own repository
 
-The Studio+ upload is refactored into `studio/index.html` and small modules for data, modal content, showroom scenes, selections, and the design brief. All fonts and imagery are local. Three.js 0.128.0 is vendored with its MIT license. The page keeps working if WebGL is unavailable.
+The published Studio+ app comes from the public repository [jplovensa/sechastudio-](https://github.com/jplovensa/sechastudio-), branch `main`. The old `studio/` source is retained for reference; it is not the app deployed by the combined workflow. Only `studio/integration.css` is used from that folder, to keep all interface fonts in Inter.
 
-Deploy the complete repository root to the host already serving `sechahome.com`. The routes are:
+`.github/workflows/pages.yml` resolves an exact Studio+ commit, checks it out, installs its locked dependencies, builds its CSS, and runs both repositories' logic tests. `tools/prepare-site.py` packages its runtime files under `/studio/` alongside the main site. It adds SECHA's self-hosted fonts and a home link without modifying the independent repository. The deployed `studio/source.json` records the source commit. Development tools, tests and node_modules are excluded from the artifact.
+
+Main-site pushes and manual workflow runs publish the combined site. An hourly scheduled check publishes when the Studio+ source changes; a cache marker is written only after successful publication. GitHub can delay scheduled runs and disables schedules in inactive public repositories after 60 days. Use Actions → Publish SECHA website → Run workflow for an immediate sync. A direct push to Studio+ does not instantly trigger this repository's workflow.
+
+The existing host serves both routes:
 
 - Home: `https://sechahome.com/`
 - Studio+: `https://sechahome.com/studio/`
 
-`studio/` links use relative paths so the same files also work under a GitHub Pages repository path. Existing domain ownership, DNS, HTTPS, and live deployment are not configured or verified by adding this folder. No subdomain or separate host is needed.
+No separate subdomain, DNS record, hosting service or paid hosting plan is required for the folder route. In Settings → Pages, the main repository's source must be **GitHub Actions**. Existing custom-domain and DNS configuration must already point to this site; a push alone does not verify live publication. For another static host, deploy the generated `_site/` directory rather than the repository root.
 
-For CSS development, run `npm ci` and `npm run build:studio`. Tailwind 3.4.17 is pinned in the lockfile; deployment uses the committed `studio/assets/utilities.css`, so it requires no runtime CDN or build service.
+For a combined local preview:
 
-Studio+ prices are retained from the upload and are estimates pending studio confirmation. There is no payment processing or lead-submission endpoint. The final questionnaire step opens a WhatsApp brief containing room size, package, preferences, and shortlisted materials. The visitor chooses whether to send the message.
+```sh
+# Clone the independent public repository beside this checkout, if absent.
+git clone https://github.com/jplovensa/sechastudio-.git ../sechastudio-integration
+(cd ../sechastudio-integration && npm ci && npm run build && npm test)
+npm test
+python3 tools/prepare-site.py --studio-source ../sechastudio-integration
+(cd _site && python3 ../tools/dev-server.py --port 4175)
+# Open http://127.0.0.1:4175/studio/
+```
 
-## GitHub Pages publication
-
-`.github/workflows/pages.yml` tests and publishes the committed static website on pushes to `main`. In repository Settings → Pages, the source must be **GitHub Actions**. The artifact contains only the public pages and their assets. Utility CSS is already compiled; no installation or third-party CDN is needed on the runner.
-
-The workflow's deployment result supplies the live URL. A custom domain such as `sechahome.com` requires that domain to be mapped to this repository's Pages site with matching DNS. The `/studio/` folder needs no extra mapping once the parent site is hosted. Do not assume domain configuration or deployment success from a Git push alone.
-
-The room-assembly intro is shared between home and Studio+ and plays once across both pages in a tab session. Its phase labels and progress follow video playback. Background inert states are preserved when it closes.
-
-## Studio+ customer journey rebuild
-
-Studio+ now uses the same navy, ivory, bronze, and self-hosted Inter system as SECHA. The page moves through home/property purpose, design examples, package scope and fees, delivery process, optional material exploration, a project brief, and FAQs.
-
-The five-step brief collects purpose → design direction → room size → design package → review. Package buttons preserve the full journey rather than skip essential choices. The material shortlist updates the final WhatsApp brief; it supports replacement and removal without duplicate entries. Dialogs and shortlist drawers trap keyboard focus and restore it on close.
-
-The user requested https://www.themakeover.my/ as a sequence reference. The site was inaccessible due to the environment network policy, so this revision uses a SECHA-specific customer journey and does not claim to reproduce that site's observed sequence. No reference content or screenshots were fabricated.
+The new app retains its own catalogue, room configurations, cart, opening film and WhatsApp order-request flow. It has no payment or order-storage backend. Future Studio+ changes belong in its repository; deployment integration changes belong here. The home page's Style DNA endpoint remains a separate configuration.
 
 ## Replayable intro and renovation planning
 
@@ -96,7 +94,7 @@ Lead capture requires a public browser-safe endpoint in `assets/lead-config.js`.
 
 The proposed JSON payload contains `source: "secha_style_dna"`, `name`, `phone`, `location`, explicit `consent`, `language`, `styleCode`, `styleName`, `answers` (eight 0/1 values), `preferences` (labels and balanced flags), and `recommendations`. No contact data is stored in browser storage. Closing the modal clears the contact inputs; failed submission retains details for retry. No lead is reported received before a successful endpoint response. Use the endpoint's own validation, abuse protection, retention controls, and server-side credentials.
 
-The shared opening film now attempts automatic playback on every full page load/refresh, including Studio+. Reduced-motion and Save-Data preferences still skip automatic playback; media errors and autoplay restrictions still release the page safely. Manual replay remains available.
+The home opening film attempts automatic playback on every full page load/refresh. The separately maintained Studio+ app has its own replayable opening film. Reduced-motion and Save-Data preferences still skip automatic playback; media errors and autoplay restrictions still release the page safely. Manual replay remains available.
 
 ## Featured Work showcase
 

@@ -386,6 +386,13 @@ input {
 .projects .project-card__meta {
   color: #c9b28d;
 }
+.project-card__content .text-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 .projects .section-lede,
 .projects .project-card p {
   color: #b7bec3;
