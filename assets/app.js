@@ -1,3 +1,4 @@
+import { initFeaturedWork } from "./featured-work.js";
 import { initStyleDNA } from "./style-dna.js";
 import { renderRecognition } from "./recognition.js";
 import { initSimulator } from "./simulator.js";
@@ -17,5 +18,6 @@ initLanguage(() => {
 });
 document.querySelector("#current-year").textContent = new Date().getFullYear();
 
+initFeaturedWork();
 renderRecognition();
 initOpening();

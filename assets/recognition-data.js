@@ -3,6 +3,7 @@ export const recognition = [
   {
     name: "SpotNews",
     category: "In the media",
+    categoryId: "Dalam media",
     title: "SECHA in the news",
     titleId: "SECHA dalam berita",
     status: "provided",

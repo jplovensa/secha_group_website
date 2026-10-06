@@ -59,3 +59,11 @@ Style DNA adds a responsive home-page section and desktop/mobile menu dialog. Ei
 Twelve unit tests pass. Chromium checked both-page reload playback, answer gating and back/edit, result scoring, bilingual text, native modal/focus behavior, contact escaping/clearing, and no page/dialog overflow at 320/390/768/900/1024/1440px. A local mock endpoint checked consent gating, JSON payload, confirmed HTTP success, and failure/retry without losing contact fields. No actual leads were sent during testing.
 
 The owner selected endpoint delivery rather than WhatsApp. The endpoint URL, request contract, and CORS support remain required. The frontend adapter and form are built; production submission stays disabled until configured. No real lead capture or endpoint integration is claimed yet. A pending endpoint message is shown instead of false success.
+
+## Featured Work and section spacing
+
+Added the owner-supplied GSIH/MCC showcase with both logo references, a poster, and user-initiated inline playback. The 51.093-second 4K HEVC upload (15,660,855 bytes) is committed only as a 720p H.264/AAC fast-start MP4 (5,957,446 bytes). Web logos are about 48KB and the poster about 134KB. Audio and full duration are retained; no original video is committed.
+
+Found that the `.section-pad` class used by Media and Style DNA had no CSS definition. Added consistent desktop/mobile section padding, relaxed heading leading, and increased quiz progress/divider clearance. Media links now use an SVG icon instead of an unsupported font glyph, and the live media card labels support English/Indonesian.
+
+Twelve unit tests pass. Chromium verified zero showcase video requests before Watch, actual native playback, duration, seeking, logo decoding, section and title-to-divider clearances, Style DNA modal clearance, and no overflow at 320/390/768/1024/1440px. Desktop and mobile preview screenshots inspected.

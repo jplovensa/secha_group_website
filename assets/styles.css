@@ -1948,3 +1948,154 @@ body.intro-open {
     padding: 12px 15px;
   }
 }
+/* Shared section rhythm: keep headings clear of section edges and divider rules. */
+.section-pad {
+  padding-block: 100px;
+  scroll-margin-top: 110px;
+}
+.recognition .eyebrow,
+.dna-section .eyebrow,
+.featured-work .eyebrow {
+  margin: 0 0 24px;
+  line-height: 1.7;
+}
+.recognition .section-title,
+.dna-section .section-title,
+.featured-work .section-title {
+  line-height: 1.12;
+}
+.recognition .section-title {
+  margin-bottom: 48px;
+}
+.dna-dialog > progress {
+  margin: 32px 0 28px;
+}
+.dna-step {
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.featured-work {
+  background: var(--paper);
+}
+.featured-work-heading {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+.featured-work-context {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.featured-work-context > p:first-child {
+  color: var(--ink);
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.featured-work-film {
+  margin: 0;
+}
+.featured-work-film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background: #101a27;
+}
+.featured-work-film figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0 24px;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+.featured-work-logos {
+  padding: 30px;
+  background: #fff;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+.featured-work-logos img {
+  width: min(650px, 100%);
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 850px) {
+  .featured-work-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .featured-work-logos {
+    padding: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .section-pad {
+    padding-block: 65px;
+    scroll-margin-top: 100px;
+  }
+  .recognition .section-title {
+    margin-bottom: 36px;
+  }
+  .featured-work-heading {
+    margin-bottom: 28px;
+  }
+  .featured-work-film figcaption {
+    flex-direction: column;
+    gap: 8px;
+    line-height: 1.8;
+  }
+  .featured-work-logos {
+    padding: 20px;
+  }
+}
+.featured-work-player {
+  position: relative;
+}
+.featured-work-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 16px 24px;
+  min-height: 48px;
+  white-space: nowrap;
+  font: 500 12px var(--body);
+  box-shadow: 0 4px 30px #0a142a33;
+}
+.featured-work-play:focus-visible {
+  outline: 3px solid var(--bronze);
+  outline-offset: 4px;
+}
+.featured-work-play:disabled {
+  opacity: 0.65;
+}
+#featured-work-status {
+  font-size: 12px;
+  color: var(--bronze);
+  margin-top: 12px;
+}
+#featured-work-status:empty {
+  display: none;
+}
+.recognition-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

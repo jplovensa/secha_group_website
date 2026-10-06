@@ -97,3 +97,9 @@ Lead capture requires a public browser-safe endpoint in `assets/lead-config.js`.
 The proposed JSON payload contains `source: "secha_style_dna"`, `name`, `phone`, `location`, explicit `consent`, `language`, `styleCode`, `styleName`, `answers` (eight 0/1 values), `preferences` (labels and balanced flags), and `recommendations`. No contact data is stored in browser storage. Closing the modal clears the contact inputs; failed submission retains details for retry. No lead is reported received before a successful endpoint response. Use the endpoint's own validation, abuse protection, retention controls, and server-side credentials.
 
 The shared opening film now attempts automatic playback on every full page load/refresh, including Studio+. Reduced-motion and Save-Data preferences still skip automatic playback; media errors and autoplay restrictions still release the page safely. Manual replay remains available.
+
+## Featured Work showcase
+
+`assets/video/gsih-mcc-showcase.mp4` is the supplied GSIH/MCC film converted from 3840×2160 HEVC to 1280×720 H.264 (8-bit YUV420p) with AAC stereo audio and fast-start MP4. Duration is preserved at 51.093 seconds. Output: 5,957,446 bytes, compared with 15,660,855 bytes for the uploaded source (62% smaller and comfortably below GitHub's 100 MiB file limit). Only the compressed film, a lightweight poster, and the prepared web logo asset are committed.
+
+The Featured Work section uses an explicit Watch button and `preload="none"`; the movie is requested after a visitor chooses to watch. Native controls then provide pause, seek, volume, and fullscreen. Without JavaScript, native controls remain available. The poster and both supplied logo references are displayed with the project. Shared `.section-pad` spacing gives Media and Style DNA headings breathing room above dividers, with 100px desktop / 65px mobile section padding.
