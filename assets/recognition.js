@@ -30,6 +30,7 @@ export function renderRecognition() {
     container = document.querySelector("#recognition-cards");
   section.hidden = !recognition.length;
   container.replaceChildren();
+  initPublisherMotion(container);
   for (const category of recognitionCategories) {
     const group = document.createElement("section");
     group.className = "recognition-group";
@@ -113,4 +114,78 @@ export function renderRecognition() {
     group.append(grid);
     container.append(group);
   }
+}
+
+let cleanupPublisherMotion = () => {};
+function initPublisherMotion(container) {
+  cleanupPublisherMotion();
+  const bar = document.createElement("div");
+  bar.className = "recognition-motion";
+  const viewport = document.createElement("div");
+  viewport.className = "recognition-marquee";
+  const track = document.createElement("div");
+  track.className = "recognition-marquee-track";
+  track.id = "recognition-publisher-track";
+  track.setAttribute("aria-hidden", "true");
+  const publishers = [...new Set(recognition.map((entry) => entry.publisher))];
+  for (let copy = 0; copy < 2; copy++) {
+    const group = document.createElement("div");
+    group.className = "recognition-marquee-group";
+    for (const name of publishers) {
+      const item = document.createElement("span");
+      item.textContent = name;
+      group.append(item);
+    }
+    track.append(group);
+  }
+  viewport.append(track);
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "recognition-motion-toggle";
+  toggle.setAttribute("aria-controls", track.id);
+  bar.append(viewport, toggle);
+  container.before(bar);
+  const motion = matchMedia("(prefers-reduced-motion: reduce)");
+  let manuallyPaused = false,
+    visible = false;
+  function update() {
+    const paused = manuallyPaused || motion.matches;
+    bar.classList.toggle("is-reduced", motion.matches);
+    bar.classList.toggle("is-running", !paused && visible && !document.hidden);
+    toggle.disabled = motion.matches;
+    toggle.setAttribute("aria-pressed", String(paused));
+    toggle.replaceChildren();
+    bilingual(
+      toggle,
+      motion.matches ? "Motion off" : paused ? "Play motion" : "Pause motion",
+      motion.matches
+        ? "Gerakan nonaktif"
+        : paused
+          ? "Putar gerakan"
+          : "Jeda gerakan",
+    );
+  }
+  toggle.addEventListener("click", () => {
+    manuallyPaused = !manuallyPaused;
+    bar.classList.toggle("is-resuming", !manuallyPaused);
+    update();
+  });
+  toggle.addEventListener("blur", () => bar.classList.remove("is-resuming"));
+  motion.addEventListener("change", update);
+  document.addEventListener("visibilitychange", update);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      visible = entries[0].isIntersecting;
+      update();
+    },
+    { threshold: 0 },
+  );
+  observer.observe(bar);
+  cleanupPublisherMotion = () => {
+    observer.disconnect();
+    motion.removeEventListener("change", update);
+    document.removeEventListener("visibilitychange", update);
+    bar.remove();
+  };
+  update();
 }

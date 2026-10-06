@@ -85,3 +85,11 @@ Chromium verified desktop side-by-side placement, mobile stacking, three princip
 Replaced provisional media entries with eleven exact owner-supplied publisher/title/URL records, grouped into Media Coverage, Awards & Recognition, and Press Releases. The supplied labels are now card headings; publisher and category remain visible. Forbes is marked PDF; the D Globalist `4311a1a2_page=4` parameter is preserved. Forbes/D Globalist share one DGEMS identifier and a visible explanation that they document the same recognition. Women’s Tabloid/APAC Insider identify Josephine Petra Lovensa as recipient. Press-release sources remain explicitly labelled.
 
 Chromium verified eleven cards across the three categories, counts 3/4/4, exact D Globalist parameter, PDF labelling, both CEO recipient labels, DGEMS explanation, press labels, Indonesian presentation, no overflow at 320/390/768/900/1024/1440px, and zero browser errors. External pages were not fetched or independently verified in this change.
+
+## Compact media layout and publisher motion
+
+Media & Recognition now uses three compact editorial columns on desktop and stacked categories on mobile, retaining all eleven full source titles and their publication/award/press classifications. Reduced headings, padding, list-row heights, and category gaps replace the large fixed-height card grids.
+
+A decorative, seamless publisher strip adds slow continuous motion. Its repeated visual names are hidden from assistive technology; the source cards remain the accessible catalogue. A bilingual pause/play control is available. Motion pauses on hover, keyboard focus, offscreen visibility, and hidden tabs; reduced-motion preferences show a static wrapped list and disable animation. Re-rendering cleans up prior observers and listeners.
+
+Chromium checked visible movement, manual pause/resume, hover/focus pause, live reduced-motion changes, safe re-rendering, all eleven cards, compact desktop height, six widths (320/390/768/900/1024/1440px), and zero browser errors. Existing media acceptance checks also verify exact source labels/URLs, the PDF, CEO recipients, press-release labels, and the D Globalist parameter.

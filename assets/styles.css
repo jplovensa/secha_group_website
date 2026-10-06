@@ -2238,3 +2238,220 @@ body.intro-open {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* Compact editorial lists keep all source titles readable. */
+.recognition.section-pad {
+  padding-block: 64px;
+}
+.recognition .section-title {
+  font-size: clamp(30px, 3.2vw, 44px);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+.recognition > .section-shell > .eyebrow {
+  margin-bottom: 16px;
+}
+.recognition-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.recognition .recognition-group + .recognition-group {
+  margin-top: 0;
+}
+.recognition .recognition-group-heading {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.recognition .recognition-group-note {
+  font-size: 10px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+.recognition .recognition-grid {
+  display: flex;
+  flex-direction: column;
+  border: 0;
+}
+.recognition .recognition-card {
+  min-height: 0;
+  padding: 16px 0 10px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.recognition .recognition-category {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+.recognition .recognition-publisher {
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+.recognition .recognition-card h4 {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+.recognition .recognition-recipient {
+  font-size: 10px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.recognition .recognition-card a {
+  font-size: 10px;
+  min-height: 36px;
+  margin-top: 0;
+  text-decoration: none;
+}
+.recognition .recognition-card a svg {
+  transition: transform 0.2s ease;
+}
+.recognition .recognition-card a:hover svg,
+.recognition .recognition-card a:focus-visible svg {
+  transform: translate(2px, -2px);
+}
+.recognition .recognition-card:focus-within {
+  background: #f4efe466;
+}
+.recognition-motion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-block: 1px solid var(--line);
+  padding: 8px 0;
+  margin-bottom: 28px;
+}
+.recognition-marquee {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 20px,
+    #000 calc(100% - 20px),
+    transparent
+  );
+}
+.recognition-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: recognition-drift 45s linear infinite;
+  animation-play-state: paused;
+  will-change: transform;
+}
+.recognition-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+}
+.recognition-marquee-group span {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.recognition-marquee-group span:after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--bronze);
+  opacity: 0.5;
+}
+.recognition-motion.is-running .recognition-marquee-track {
+  animation-play-state: running;
+}
+.recognition-motion:hover .recognition-marquee-track,
+.recognition-motion:focus-within:not(.is-resuming) .recognition-marquee-track {
+  animation-play-state: paused;
+}
+.recognition-motion-toggle {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 8px;
+  background: transparent;
+  font: 400 10px var(--body);
+  color: var(--bronze);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.recognition-motion-toggle:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 2px;
+}
+.recognition-motion.is-reduced .recognition-marquee-track {
+  animation: none;
+  transform: none;
+  width: 100%;
+  will-change: auto;
+}
+.recognition-motion.is-reduced .recognition-marquee-group {
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding-right: 0;
+}
+.recognition-motion.is-reduced
+  .recognition-marquee-group
+  + .recognition-marquee-group {
+  display: none;
+}
+.recognition-motion.is-reduced .recognition-marquee {
+  mask-image: none;
+}
+.recognition-motion.is-reduced .recognition-marquee-group span {
+  gap: 14px;
+}
+.recognition-motion-toggle:disabled {
+  opacity: 0.65;
+  text-decoration: none;
+  cursor: default;
+}
+@keyframes recognition-drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 850px) {
+  .recognition-groups {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .recognition .recognition-card {
+    padding: 12px 0 8px;
+  }
+  .recognition .recognition-card a {
+    min-height: 44px;
+  }
+  .recognition-motion {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .recognition.section-pad {
+    padding-block: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .recognition-marquee-track {
+    animation: none !important;
+    will-change: auto;
+  }
+  .recognition .recognition-card,
+  .recognition .recognition-card a svg {
+    transition: none;
+  }
+  .recognition .recognition-card a:hover svg,
+  .recognition .recognition-card a:focus-visible svg {
+    transform: none;
+  }
+}
