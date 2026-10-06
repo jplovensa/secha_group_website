@@ -1,529 +1,1208 @@
 <!doctype html>
 <html lang="en" class="no-js">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SECHA | Design, Finance &amp; Renovation Platform</title>
-  <meta id="meta-description" name="description" content="SECHA connects design, renovation financing, and coordinated delivery in one bilingual property platform.">
-  <meta name="theme-color" content="#f4efe4">
-  <meta name="color-scheme" content="light">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="SECHA | Design, Finance &amp; Renovation Platform">
-  <meta property="og:description" content="A clearer renovation route — design, financing, and delivery in one coordinated flow.">
-  <meta property="og:image" content="assets/hero-luxury.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="apple-touch-icon" href="assets/secha-logo.png">
-  <link rel="stylesheet" href="assets/fonts.css">
-  <link rel="stylesheet" href="assets/styles.css">
-  <script>document.documentElement.classList.replace('no-js','js');</script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "SECHA",
-      "url": "https://jplovensa.github.io/secha_group_website/",
-      "logo": "assets/secha-logo.png",
-      "email": "info@sechahomes.com",
-      "telephone": "+62-821-7407-2041"
-    }
-  </script>
-</head>
-<body data-lang="en">
-  <a class="skip-link" href="#main">
-    <span class="lang-en">Skip to content</span>
-    <span class="lang-id">Lewati ke konten</span>
-  </a>
-
-
-  <section class="opening" id="opening" aria-label="SECHA opening film" hidden>
-    <p class="opening__brand">SECHA</p>
-    <video id="opening-video" muted playsinline preload="none" poster="assets/video/furniture-assembly-poster.jpg" aria-label="Sofa modules, a stone table, and oak shelving assemble into a complete room">
-      <source src="assets/video/furniture-assembly.mp4" type="video/mp4">
-    </video>
-    <p class="opening__caption"><span class="lang-en">Considered pieces. A complete home.</span><span class="lang-id">Bagian yang matang. Rumah yang utuh.</span></p>
-    <p class="opening__stage" id="opening-stage" aria-hidden="true"></p>
-    <div class="opening__track" aria-hidden="true"><span id="opening-progress"></span></div>
-    <button class="opening__skip" id="opening-skip" type="button"><span class="lang-en">Skip intro</span><span class="lang-id">Lewati intro</span></button>
-  </section>
-
-  <header class="site-header" id="site-header">
-    <a class="brand" href="#top" aria-label="SECHA home">
-      <img src="assets/secha-logo.png" alt="SECHA monogram" width="42" height="42">
-      <span class="brand__text">SECHA</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SECHA | Design, Finance &amp; Renovation Platform</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="SECHA connects design, renovation financing, and coordinated delivery in one bilingual property platform."
+    />
+    <meta name="theme-color" content="#f4efe4" />
+    <meta name="color-scheme" content="light" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="SECHA | Design, Finance &amp; Renovation Platform"
+    />
+    <meta
+      property="og:description"
+      content="A clearer renovation route — design, financing, and delivery in one coordinated flow."
+    />
+    <meta property="og:image" content="assets/hero-luxury.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/secha-logo.png" />
+    <link rel="stylesheet" href="assets/fonts.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script>
+      document.documentElement.classList.replace("no-js", "js");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SECHA",
+        "url": "https://jplovensa.github.io/secha_group_website/",
+        "logo": "assets/secha-logo.png",
+        "email": "info@sechahomes.com",
+        "telephone": "+62-821-7407-2041"
+      }
+    </script>
+  </head>
+  <body data-lang="en">
+    <a class="skip-link" href="#main">
+      <span class="lang-en">Skip to content</span>
+      <span class="lang-id">Lewati ke konten</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="#platform"><span class="lang-en">Platform</span><span class="lang-id">Platform</span></a>
-      <a href="#projects"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a>
-      <a href="#process"><span class="lang-en">Process</span><span class="lang-id">Proses</span></a>
-      <a href="#financing"><span class="lang-en">Financing</span><span class="lang-id">Pembiayaan</span></a>
-      <a href="#contact"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a>
-    </nav>
-
-    <div class="header-actions">
-      <div class="language-switch" aria-label="Language">
-        <button type="button" class="language-switch__button is-active" data-set-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="language-switch__button" data-set-lang="id" aria-pressed="false">ID</button>
+    <section
+      class="opening"
+      id="opening"
+      role="dialog"
+      aria-modal="true"
+      aria-label="SECHA opening film"
+      hidden
+    >
+      <p class="opening__brand">SECHA</p>
+      <video
+        id="opening-video"
+        muted
+        playsinline
+        preload="none"
+        poster="assets/video/furniture-assembly-poster.jpg"
+        aria-label="Sofa modules, a stone table, and oak shelving assemble into a complete room"
+      >
+        <source src="assets/video/furniture-assembly.mp4" type="video/mp4" />
+      </video>
+      <p class="opening__caption">
+        <span class="lang-en">Considered pieces. A complete home.</span
+        ><span class="lang-id">Bagian yang matang. Rumah yang utuh.</span>
+      </p>
+      <p class="opening__stage" id="opening-stage" aria-hidden="true"></p>
+      <div class="opening__track" aria-hidden="true">
+        <span id="opening-progress"></span>
       </div>
-      <button class="header-cta" type="button" data-open-preform data-placement="header">
+      <div class="opening__controls">
+        <button type="button" id="opening-play">Play</button
+        ><label class="opening__seek-label" for="opening-seek"
+          ><span class="lang-en">Video progress</span
+          ><span class="lang-id">Progres video</span></label
+        ><input
+          id="opening-seek"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Video progress"
+        />
+      </div>
+      <button class="opening__skip" id="opening-skip" type="button">
+        <span class="lang-en">Skip intro</span
+        ><span class="lang-id">Lewati intro</span>
+      </button>
+    </section>
+
+    <header class="site-header" id="site-header">
+      <a class="brand" href="#top" aria-label="SECHA home">
+        <img
+          src="assets/secha-logo.png"
+          alt="SECHA monogram"
+          width="42"
+          height="42"
+        />
+        <span class="brand__text">SECHA</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#platform"
+          ><span class="lang-en">Platform</span
+          ><span class="lang-id">Platform</span></a
+        >
+        <a href="#projects"
+          ><span class="lang-en">Projects</span
+          ><span class="lang-id">Proyek</span></a
+        >
+        <a href="#process"
+          ><span class="lang-en">Process</span
+          ><span class="lang-id">Proses</span></a
+        >
+        <a href="#financing"
+          ><span class="lang-en">Financing</span
+          ><span class="lang-id">Pembiayaan</span></a
+        >
+        <a href="#contact"
+          ><span class="lang-en">Contact</span
+          ><span class="lang-id">Kontak</span></a
+        >
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language">
+          <button
+            type="button"
+            class="language-switch__button is-active"
+            data-set-lang="en"
+            aria-pressed="true"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            class="language-switch__button"
+            data-set-lang="id"
+            aria-pressed="false"
+          >
+            ID
+          </button>
+        </div>
+        <button
+          class="header-cta"
+          type="button"
+          data-open-simulator
+          data-placement="header"
+        >
+          <span class="lang-en">Check Financing</span>
+          <span class="lang-id">Cek Pembiayaan</span>
+        </button>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav
+      class="mobile-nav"
+      id="mobile-nav"
+      aria-label="Mobile navigation"
+      aria-hidden="true"
+      inert
+    >
+      <a href="#platform"
+        ><span class="lang-en">Platform</span
+        ><span class="lang-id">Platform</span></a
+      >
+      <a href="#projects"
+        ><span class="lang-en">Projects</span
+        ><span class="lang-id">Proyek</span></a
+      >
+      <a href="#process"
+        ><span class="lang-en">Process</span
+        ><span class="lang-id">Proses</span></a
+      >
+      <a href="#financing"
+        ><span class="lang-en">Financing</span
+        ><span class="lang-id">Pembiayaan</span></a
+      >
+      <a href="#contact"
+        ><span class="lang-en">Contact</span
+        ><span class="lang-id">Kontak</span></a
+      >
+      <button type="button" data-open-simulator data-placement="mobile_nav">
         <span class="lang-en">Check Financing</span>
         <span class="lang-id">Cek Pembiayaan</span>
       </button>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
+    </nav>
 
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" inert>
-    <a href="#platform"><span class="lang-en">Platform</span><span class="lang-id">Platform</span></a>
-    <a href="#projects"><span class="lang-en">Projects</span><span class="lang-id">Proyek</span></a>
-    <a href="#process"><span class="lang-en">Process</span><span class="lang-id">Proses</span></a>
-    <a href="#financing"><span class="lang-en">Financing</span><span class="lang-id">Pembiayaan</span></a>
-    <a href="#contact"><span class="lang-en">Contact</span><span class="lang-id">Kontak</span></a>
-    <button type="button" data-open-preform data-placement="mobile_nav">
-      <span class="lang-en">Check Financing</span>
-      <span class="lang-id">Cek Pembiayaan</span>
-    </button>
-  </nav>
-
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="section-shell hero__grid">
-        <div class="hero__copy">
-          <p class="eyebrow reveal">
-            <span class="lang-en">DESIGN. FINANCE. RENOVATE.</span>
-            <span class="lang-id">DESAIN. BIAYAI. RENOVASI.</span>
-          </p>
-          <h1 class="hero__title reveal" id="hero-title">
-            <span class="lang-en">A better home.<br><em>A clearer journey.</em></span>
-            <span class="lang-id">Rumah lebih baik.<br><em>Langkah lebih jelas.</em></span>
-          </h1>
-          <p class="hero__lede reveal">
-            <span class="lang-en">Thoughtful design, a financing route, and coordinated renovation. Everything your next chapter needs, brought together.</span>
-            <span class="lang-id">Desain yang matang, jalur pembiayaan, dan renovasi terkoordinasi. Semua untuk babak baru rumah Anda, dalam satu alur.</span>
-          </p>
-          <div class="hero__actions reveal">
-            <button class="solid-link" type="button" data-open-preform data-placement="hero">
-              <span class="lang-en">Check financing options</span>
-              <span class="lang-id">Cek opsi pembiayaan</span>
-            </button>
-            <a class="outline-link" href="#projects">
-              <span class="lang-en">View transformations</span>
-              <span class="lang-id">Lihat transformasi</span>
-            </a>
-          </div>
-          <dl class="hero__proof reveal" aria-label="SECHA platform highlights">
-            <div>
-              <dt>01</dt>
-              <dd><span class="lang-en">One coordinated scope</span><span class="lang-id">Satu ruang lingkup terpadu</span></dd>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="section-shell hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow reveal">
+              <span class="lang-en">DESIGN. FINANCE. RENOVATE.</span>
+              <span class="lang-id">DESAIN. BIAYAI. RENOVASI.</span>
+            </p>
+            <h1 class="hero__title reveal" id="hero-title">
+              <span class="lang-en"
+                >A better home.<br /><em>A clearer journey.</em></span
+              >
+              <span class="lang-id"
+                >Rumah lebih baik.<br /><em>Langkah lebih jelas.</em></span
+              >
+            </h1>
+            <p class="hero__lede reveal">
+              <span class="lang-en"
+                >Thoughtful design, a financing route, and coordinated
+                renovation. Everything your next chapter needs, brought
+                together.</span
+              >
+              <span class="lang-id"
+                >Desain yang matang, jalur pembiayaan, dan renovasi
+                terkoordinasi. Semua untuk babak baru rumah Anda, dalam satu
+                alur.</span
+              >
+            </p>
+            <div class="hero__actions reveal">
+              <button
+                class="solid-link"
+                type="button"
+                data-open-simulator
+                data-placement="hero"
+              >
+                <span class="lang-en">Check financing options</span>
+                <span class="lang-id">Cek opsi pembiayaan</span>
+              </button>
+              <a class="outline-link" href="#projects">
+                <span class="lang-en">View transformations</span>
+                <span class="lang-id">Lihat transformasi</span>
+              </a>
             </div>
-            <div>
-              <dt>02</dt>
-              <dd><span class="lang-en">Bank-backed financing route</span><span class="lang-id">Jalur pembiayaan bank</span></dd>
-            </div>
-            <div>
-              <dt>03</dt>
-              <dd><span class="lang-en">Design-to-build delivery</span><span class="lang-id">Desain hingga pembangunan</span></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="hero__visual reveal">
-          <figure class="hero__frame">
-            <img src="assets/hero-luxury.jpg" alt="Finished SECHA residence with warm modern interior design" width="2400" height="1350" data-alt-en="Finished SECHA residence with warm modern interior design" data-alt-id="Residens SECHA yang selesai dengan desain interior modern yang hangat">
-          </figure>
-          <div class="hero__panel">
-            <span><span class="lang-en">Renovation route</span><span class="lang-id">Rute renovasi</span></span>
-            <strong><span class="lang-en">Design → Finance → Build</span><span class="lang-id">Desain → Pembiayaan → Bangun</span></strong>
-          </div>
-          <div class="hero__badge">SECHA × AMAR BANK</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="platform" id="platform" aria-labelledby="platform-title">
-      <div class="section-shell">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span class="lang-en">The platform</span><span class="lang-id">Platform</span></p>
-          <h2 class="section-title" id="platform-title">
-            <span class="lang-en">Your vision. One connected team.</span>
-            <span class="lang-id">Visi Anda. Satu tim terpadu.</span>
-          </h2>
-          <p class="section-lede">
-            <span class="lang-en">Instead of starting with scattered vendors, SECHA connects the decisions that determine whether a renovation stays clear: design intent, cost, funding, and execution.</span>
-            <span class="lang-id">Alih-alih memulai dari vendor yang terpisah, SECHA menghubungkan keputusan yang menentukan kejelasan renovasi: niat desain, biaya, pendanaan, dan eksekusi.</span>
-          </p>
-        </div>
-
-        <div class="platform__grid">
-          <article class="platform-card reveal">
-            <span>01</span>
-            <h3><span class="lang-en">Design intelligence</span><span class="lang-id">Kecerdasan desain</span></h3>
-            <p><span class="lang-en">Translate the existing space into a scope, material direction, and renovation brief that can be costed and built.</span><span class="lang-id">Menerjemahkan ruang eksisting menjadi ruang lingkup, arah material, dan brief renovasi yang dapat dihitung serta dibangun.</span></p>
-          </article>
-          <article class="platform-card reveal">
-            <span>02</span>
-            <h3><span class="lang-en">Financing clarity</span><span class="lang-id">Kejelasan pembiayaan</span></h3>
-            <p><span class="lang-en">A documented renovation direction creates a cleaner route into Amar Bank's embedded application flow.</span><span class="lang-id">Arah renovasi yang terdokumentasi menciptakan jalur yang lebih rapi menuju alur aplikasi embedded Amar Bank.</span></p>
-          </article>
-          <article class="platform-card reveal">
-            <span>03</span>
-            <h3><span class="lang-en">Managed delivery</span><span class="lang-id">Pelaksanaan terkelola</span></h3>
-            <p><span class="lang-en">Design, budget, and progress remain connected through a coordinated build sequence.</span><span class="lang-id">Desain, anggaran, dan progres tetap terhubung melalui rangkaian pembangunan yang terkoordinasi.</span></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects" aria-labelledby="projects-title">
-      <div class="section-shell">
-        <div class="section-heading section-heading--split reveal">
-          <div>
-            <p class="eyebrow"><span class="lang-en">Selected transformations</span><span class="lang-id">Transformasi terpilih</span></p>
-            <h2 class="section-title" id="projects-title">
-              <span class="lang-en">Spaces to inspire<br>your next chapter.</span>
-              <span class="lang-id">Ruang inspiratif untuk<br>babak baru Anda.</span>
-            </h2>
-          </div>
-          <p class="section-lede">
-            <span class="lang-en">Each direction pairs a spatial concept with a practical renovation route, so the visual ambition can move toward an executable scope.</span>
-            <span class="lang-id">Setiap arah memadukan konsep ruang dengan jalur renovasi praktis, sehingga ambisi visual dapat bergerak menuju ruang lingkup yang dapat dieksekusi.</span>
-          </p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card reveal">
-            <figure>
-              <img src="assets/project-luxury.jpg" alt="Restored modern luxury residence with layered neutral living space" width="1800" height="1013" data-alt-en="Restored modern luxury residence with layered neutral living space" data-alt-id="Residens modern luxury yang dipulihkan dengan ruang keluarga netral berlapis" loading="lazy">
-            </figure>
-            <div class="project-card__content">
-              <div class="project-card__meta">
-                <span><span class="lang-en">Full renovation</span><span class="lang-id">Renovasi menyeluruh</span></span>
-                <span>01</span>
+            <dl
+              class="hero__proof reveal"
+              aria-label="SECHA platform highlights"
+            >
+              <div>
+                <dt>01</dt>
+                <dd>
+                  <span class="lang-en">One coordinated scope</span
+                  ><span class="lang-id">Satu ruang lingkup terpadu</span>
+                </dd>
               </div>
-              <h3><span class="lang-en">Modern Luxury House</span><span class="lang-id">Modern Luxury House</span></h3>
-              <p><span class="lang-en">Warm stone, timber, and layered light for a refined residential upgrade.</span><span class="lang-id">Batu hangat, kayu, dan cahaya berlapis untuk peningkatan hunian yang refined.</span></p>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <figure>
-              <img src="assets/project-minimalist.jpg" alt="Modern minimalist residence with stone, dark timber, and open living spaces" width="1800" height="1232" data-alt-en="Modern minimalist residence with stone, dark timber, and open living spaces" data-alt-id="Residens modern minimalis dengan batu, kayu gelap, dan ruang terbuka" loading="lazy">
-            </figure>
-            <div class="project-card__content">
-              <div class="project-card__meta">
-                <span><span class="lang-en">Interior renovation</span><span class="lang-id">Renovasi interior</span></span>
-                <span>02</span>
+              <div>
+                <dt>02</dt>
+                <dd>
+                  <span class="lang-en">Bank-backed financing route</span
+                  ><span class="lang-id">Jalur pembiayaan bank</span>
+                </dd>
               </div>
-              <h3><span class="lang-en">Modern Minimalist</span><span class="lang-id">Modern Minimalis</span></h3>
-              <p><span class="lang-en">Clearer circulation, durable finishes, and a calmer family living rhythm.</span><span class="lang-id">Sirkulasi yang lebih jelas, finishing tahan lama, dan ritme hunian keluarga yang lebih tenang.</span></p>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <figure>
-              <img src="assets/project-tropical.jpg" alt="Tropical SECHA Studio residence opening toward landscaped greenery" width="1600" height="1600" data-alt-en="Tropical SECHA Studio residence opening toward landscaped greenery" data-alt-id="Residens tropis SECHA Studio yang terbuka menuju area hijau" loading="lazy">
-            </figure>
-            <div class="project-card__content">
-              <div class="project-card__meta">
-                <span><span class="lang-en">Studio+ concept</span><span class="lang-id">Konsep Studio+</span></span>
-                <span>03</span>
+              <div>
+                <dt>03</dt>
+                <dd>
+                  <span class="lang-en">Design-to-build delivery</span
+                  ><span class="lang-id">Desain hingga pembangunan</span>
+                </dd>
               </div>
-              <h3><span class="lang-en">Tropical House</span><span class="lang-id">Rumah Tropis</span></h3>
-              <p><span class="lang-en">Filtered daylight, planted thresholds, and indoor-outdoor rooms that work as one.</span><span class="lang-id">Cahaya tersaring, ambang hijau, dan ruang dalam-luar yang berfungsi sebagai satu kesatuan.</span></p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="process" id="process" aria-labelledby="process-title">
-      <div class="section-shell process__grid">
-        <div class="process__intro reveal">
-          <p class="eyebrow"><span class="lang-en">How SECHA moves</span><span class="lang-id">Cara SECHA bekerja</span></p>
-          <h2 class="section-title" id="process-title">
-            <span class="lang-en">A clearer path from first brief to finished space.</span>
-            <span class="lang-id">Jalur yang lebih jelas dari brief awal hingga ruang selesai.</span>
-          </h2>
-          <p class="section-lede">
-            <span class="lang-en">The sequence keeps the renovation legible at every stage, so design decisions and financing decisions do not compete with each other.</span>
-            <span class="lang-id">Sekuens ini menjaga renovasi tetap mudah dipahami di setiap tahap, sehingga keputusan desain dan pembiayaan tidak saling bertentangan.</span>
-          </p>
-          <a class="outline-link" href="#financing">
-            <span class="lang-en">Continue to financing</span>
-            <span class="lang-id">Lanjut ke pembiayaan</span>
-          </a>
-        </div>
-
-        <div class="process__steps">
-          <article class="process-step reveal">
-            <span>01</span>
-            <div>
-              <h3><span class="lang-en">Diagnose</span><span class="lang-id">Diagnosis</span></h3>
-              <p><span class="lang-en">Audit the structure, spatial flow, services, and constraints before design begins.</span><span class="lang-id">Mengaudit struktur, alur ruang, utilitas, dan kendala sebelum desain dimulai.</span></p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>02</span>
-            <div>
-              <h3><span class="lang-en">Define</span><span class="lang-id">Definisi</span></h3>
-              <p><span class="lang-en">Translate the brief into plans, material studies, and a precise renovation cost base.</span><span class="lang-id">Menerjemahkan brief menjadi denah, studi material, dan dasar biaya renovasi yang presisi.</span></p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>03</span>
-            <div>
-              <h3><span class="lang-en">Finance</span><span class="lang-id">Pembiayaan</span></h3>
-              <p><span class="lang-en">Connect the documented scope to Amar Bank's embedded renovation application route.</span><span class="lang-id">Menghubungkan ruang lingkup terdokumentasi ke jalur aplikasi renovasi embedded Amar Bank.</span></p>
-            </div>
-          </article>
-          <article class="process-step reveal">
-            <span>04</span>
-            <div>
-              <h3><span class="lang-en">Deliver</span><span class="lang-id">Penyelesaian</span></h3>
-              <p><span class="lang-en">Coordinate execution while keeping design intent, cost, and progress visibly connected.</span><span class="lang-id">Mengoordinasikan eksekusi sambil menjaga niat desain, biaya, dan progres tetap terhubung.</span></p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="materials" aria-labelledby="materials-title">
-      <div class="section-shell">
-        <div class="section-heading section-heading--split reveal">
-          <div>
-            <p class="eyebrow"><span class="lang-en">Finish library</span><span class="lang-id">Pustaka finishing</span></p>
-            <h2 class="section-title" id="materials-title">
-              <span class="lang-en">Finishes that feel considered, not decorated.</span>
-              <span class="lang-id">Finishing yang terasa matang, bukan sekadar dekoratif.</span>
-            </h2>
+            </dl>
           </div>
-          <p class="section-lede">
-            <span class="lang-en">Stone, timber, daylight, and layered neutrals give each renovation direction a grounded material logic.</span>
-            <span class="lang-id">Batu, kayu, cahaya alami, dan lapisan netral memberi setiap arah renovasi logika material yang kuat.</span>
-          </p>
-        </div>
 
-        <div class="materials__grid">
-          <figure class="material-card reveal">
-            <img src="assets/archive-luxury-suite.jpg" alt="Neutral luxury suite with layered natural materials" width="1200" height="675" data-alt-en="Neutral luxury suite with layered natural materials" data-alt-id="Suite mewah netral dengan material alami berlapis" loading="lazy">
-            <figcaption><span class="lang-en">Neutral layering</span><span class="lang-id">Lapisan netral</span></figcaption>
-          </figure>
-          <figure class="material-card reveal">
-            <img src="assets/archive-minimalist-living.jpg" alt="Minimalist living and dining room with stone and timber" width="1200" height="821" data-alt-en="Minimalist living and dining room with stone and timber" data-alt-id="Ruang keluarga dan makan minimalis dengan batu dan kayu" loading="lazy">
-            <figcaption><span class="lang-en">Tactile restraint</span><span class="lang-id">Restraint tekstural</span></figcaption>
-          </figure>
-          <figure class="material-card reveal">
-            <img src="assets/archive-tropical-suite.jpg" alt="Tropical bedroom with warm wood and filtered daylight" width="1200" height="1200" data-alt-en="Tropical bedroom with warm wood and filtered daylight" data-alt-id="Kamar tropis dengan kayu hangat dan cahaya tersaring" loading="lazy">
-            <figcaption><span class="lang-en">Filtered daylight</span><span class="lang-id">Cahaya tersaring</span></figcaption>
-          </figure>
-          <figure class="material-card reveal">
-            <img src="assets/archive-marble-bath.jpg" alt="Marble bathroom with sculptural bath and bronze details" width="1200" height="675" data-alt-en="Marble bathroom with sculptural bath and bronze details" data-alt-id="Kamar mandi marmer dengan bath skulptural dan detail perunggu" loading="lazy">
-            <figcaption><span class="lang-en">Stone calm</span><span class="lang-id">Ketenangan batu</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="decision" aria-labelledby="decision-title">
-      <div class="section-shell">
-        <div class="decision__panel reveal">
-          <div>
-            <p class="eyebrow"><span class="lang-en">Two renovation intents</span><span class="lang-id">Dua tujuan renovasi</span></p>
-            <h2 class="section-title" id="decision-title">
-              <span class="lang-en">For the home you live in — or the asset you are preparing.</span>
-              <span class="lang-id">Untuk rumah yang Anda huni — atau aset yang sedang Anda siapkan.</span>
-            </h2>
+          <div class="hero__visual reveal">
+            <figure class="hero__frame">
+              <img
+                src="assets/hero-luxury.jpg"
+                alt="Finished SECHA residence with warm modern interior design"
+                width="2400"
+                height="1350"
+                data-alt-en="Finished SECHA residence with warm modern interior design"
+                data-alt-id="Residens SECHA yang selesai dengan desain interior modern yang hangat"
+              />
+            </figure>
+            <div class="hero__panel">
+              <span
+                ><span class="lang-en">Renovation route</span
+                ><span class="lang-id">Rute renovasi</span></span
+              >
+              <strong
+                ><span class="lang-en">Design → Finance → Build</span
+                ><span class="lang-id"
+                  >Desain → Pembiayaan → Bangun</span
+                ></strong
+              >
+            </div>
+            <div class="hero__badge">SECHA × AMAR BANK</div>
           </div>
-          <div class="decision__grid">
-            <article>
-              <span>OWN-STAY</span>
-              <h3><span class="lang-en">Upgrade daily life</span><span class="lang-id">Tingkatkan kualitas hidup</span></h3>
-              <p><span class="lang-en">Prioritise comfort, storage, durability, and the way your household actually moves through the space.</span><span class="lang-id">Prioritaskan kenyamanan, penyimpanan, daya tahan, dan cara penghuni benar-benar bergerak di dalam ruang.</span></p>
+        </div>
+      </section>
+
+      <section class="platform" id="platform" aria-labelledby="platform-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <p class="eyebrow">
+              <span class="lang-en">The platform</span
+              ><span class="lang-id">Platform</span>
+            </p>
+            <h2 class="section-title" id="platform-title">
+              <span class="lang-en">Your vision. One connected team.</span>
+              <span class="lang-id">Visi Anda. Satu tim terpadu.</span>
+            </h2>
+            <p class="section-lede">
+              <span class="lang-en"
+                >Instead of starting with scattered vendors, SECHA connects the
+                decisions that determine whether a renovation stays clear:
+                design intent, cost, funding, and execution.</span
+              >
+              <span class="lang-id"
+                >Alih-alih memulai dari vendor yang terpisah, SECHA
+                menghubungkan keputusan yang menentukan kejelasan renovasi: niat
+                desain, biaya, pendanaan, dan eksekusi.</span
+              >
+            </p>
+          </div>
+
+          <div class="platform__grid">
+            <article class="platform-card reveal">
+              <span>01</span>
+              <h3>
+                <span class="lang-en">Design intelligence</span
+                ><span class="lang-id">Kecerdasan desain</span>
+              </h3>
+              <p>
+                <span class="lang-en"
+                  >Translate the existing space into a scope, material
+                  direction, and renovation brief that can be costed and
+                  built.</span
+                ><span class="lang-id"
+                  >Menerjemahkan ruang eksisting menjadi ruang lingkup, arah
+                  material, dan brief renovasi yang dapat dihitung serta
+                  dibangun.</span
+                >
+              </p>
             </article>
-            <article>
-              <span>INVESTMENT</span>
-              <h3><span class="lang-en">Prepare a stronger property</span><span class="lang-id">Siapkan properti yang lebih kuat</span></h3>
-              <p><span class="lang-en">Shape a cleaner, more marketable finish with a scope and funding path that can be evaluated early.</span><span class="lang-id">Bentuk finishing yang lebih rapi dan mudah dipasarkan dengan ruang lingkup serta jalur pendanaan yang dapat dievaluasi sejak awal.</span></p>
+            <article class="platform-card reveal">
+              <span>02</span>
+              <h3>
+                <span class="lang-en">Financing clarity</span
+                ><span class="lang-id">Kejelasan pembiayaan</span>
+              </h3>
+              <p>
+                <span class="lang-en"
+                  >A documented renovation direction creates a cleaner route
+                  into Amar Bank's embedded application flow.</span
+                ><span class="lang-id"
+                  >Arah renovasi yang terdokumentasi menciptakan jalur yang
+                  lebih rapi menuju alur aplikasi embedded Amar Bank.</span
+                >
+              </p>
+            </article>
+            <article class="platform-card reveal">
+              <span>03</span>
+              <h3>
+                <span class="lang-en">Managed delivery</span
+                ><span class="lang-id">Pelaksanaan terkelola</span>
+              </h3>
+              <p>
+                <span class="lang-en"
+                  >Design, budget, and progress remain connected through a
+                  coordinated build sequence.</span
+                ><span class="lang-id"
+                  >Desain, anggaran, dan progres tetap terhubung melalui
+                  rangkaian pembangunan yang terkoordinasi.</span
+                >
+              </p>
             </article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="financing" id="financing" aria-labelledby="financing-title">
-      <div class="section-shell financing__heading">
-        <div class="section-kicker reveal">
-          <span>05</span>
-          <span class="lang-en">Financing Chapter</span>
-          <span class="lang-id">Bab Pembiayaan</span>
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-shell">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="eyebrow">
+                <span class="lang-en">Selected transformations</span
+                ><span class="lang-id">Transformasi terpilih</span>
+              </p>
+              <h2 class="section-title" id="projects-title">
+                <span class="lang-en"
+                  >Spaces to inspire<br />your next chapter.</span
+                >
+                <span class="lang-id"
+                  >Ruang inspiratif untuk<br />babak baru Anda.</span
+                >
+              </h2>
+            </div>
+            <p class="section-lede">
+              <span class="lang-en"
+                >Each direction pairs a spatial concept with a practical
+                renovation route, so the visual ambition can move toward an
+                executable scope.</span
+              >
+              <span class="lang-id"
+                >Setiap arah memadukan konsep ruang dengan jalur renovasi
+                praktis, sehingga ambisi visual dapat bergerak menuju ruang
+                lingkup yang dapat dieksekusi.</span
+              >
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <figure>
+                <img
+                  src="assets/project-luxury.jpg"
+                  alt="Restored modern luxury residence with layered neutral living space"
+                  width="1800"
+                  height="1013"
+                  data-alt-en="Restored modern luxury residence with layered neutral living space"
+                  data-alt-id="Residens modern luxury yang dipulihkan dengan ruang keluarga netral berlapis"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span
+                    ><span class="lang-en">Full renovation</span
+                    ><span class="lang-id">Renovasi menyeluruh</span></span
+                  >
+                  <span>01</span>
+                </div>
+                <h3>
+                  <span class="lang-en">Modern Luxury House</span
+                  ><span class="lang-id">Modern Luxury House</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Warm stone, timber, and layered light for a refined
+                    residential upgrade.</span
+                  ><span class="lang-id"
+                    >Batu hangat, kayu, dan cahaya berlapis untuk peningkatan
+                    hunian yang refined.</span
+                  >
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <figure>
+                <img
+                  src="assets/project-minimalist.jpg"
+                  alt="Modern minimalist residence with stone, dark timber, and open living spaces"
+                  width="1800"
+                  height="1232"
+                  data-alt-en="Modern minimalist residence with stone, dark timber, and open living spaces"
+                  data-alt-id="Residens modern minimalis dengan batu, kayu gelap, dan ruang terbuka"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span
+                    ><span class="lang-en">Interior renovation</span
+                    ><span class="lang-id">Renovasi interior</span></span
+                  >
+                  <span>02</span>
+                </div>
+                <h3>
+                  <span class="lang-en">Modern Minimalist</span
+                  ><span class="lang-id">Modern Minimalis</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Clearer circulation, durable finishes, and a calmer family
+                    living rhythm.</span
+                  ><span class="lang-id"
+                    >Sirkulasi yang lebih jelas, finishing tahan lama, dan ritme
+                    hunian keluarga yang lebih tenang.</span
+                  >
+                </p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <figure>
+                <img
+                  src="assets/project-tropical.jpg"
+                  alt="Tropical SECHA Studio residence opening toward landscaped greenery"
+                  width="1600"
+                  height="1600"
+                  data-alt-en="Tropical SECHA Studio residence opening toward landscaped greenery"
+                  data-alt-id="Residens tropis SECHA Studio yang terbuka menuju area hijau"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="project-card__content">
+                <div class="project-card__meta">
+                  <span
+                    ><span class="lang-en">Studio+ concept</span
+                    ><span class="lang-id">Konsep Studio+</span></span
+                  >
+                  <span>03</span>
+                </div>
+                <h3>
+                  <span class="lang-en">Tropical House</span
+                  ><span class="lang-id">Rumah Tropis</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Filtered daylight, planted thresholds, and indoor-outdoor
+                    rooms that work as one.</span
+                  ><span class="lang-id"
+                    >Cahaya tersaring, ambang hijau, dan ruang dalam-luar yang
+                    berfungsi sebagai satu kesatuan.</span
+                  >
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="financing__intro">
-          <h2 class="section-title reveal" id="financing-title">
-            <span class="lang-en">Amar Bank <em>×</em> SECHA</span>
-            <span class="lang-id">Amar Bank <em>×</em> SECHA</span>
-          </h2>
-          <p class="section-lede reveal">
-            <span class="lang-en">Select the banner below, complete the short pre-form, and continue to Amar Bank with a unique SECHA lead reference.</span>
-            <span class="lang-id">Pilih banner di bawah, isi pre-form singkat, dan lanjutkan ke Amar Bank dengan referensi lead SECHA yang unik.</span>
-          </p>
-        </div>
-      </div>
+      </section>
 
-      <a class="amar-banner reveal" href="https://embedded-banking.amarbank.co.id/?client_id=ebf-sechahome-web" data-open-preform data-placement="banner" aria-label="Apply for Amar Bank renovation financing">
-        <img class="lang-en" src="assets/amar-bank-banner-en.png" alt="Amar Bank renovation financing banner — Apply for up to IDR 30 million" width="1200" height="520">
-        <img class="lang-id" src="assets/amar-bank-banner-id.png" alt="Banner pembiayaan renovasi Amar Bank — Ajukan hingga 30 juta di sini" width="1200" height="520">
-      </a>
-
-      <div class="section-shell financing__note reveal">
-        <p>
-          <span class="lang-en">Explore your options. All applications, terms, and approval decisions are handled by Amar Bank.</span>
-          <span class="lang-id">Jelajahi pilihan Anda. Pengajuan, ketentuan, dan keputusan persetujuan ditangani oleh Amar Bank.</span>
-        </p>
-        <button class="text-button" type="button" data-open-preform data-placement="financing_note">
-          <span class="lang-en">Open the pre-form</span>
-          <span class="lang-id">Buka pre-form</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
-      <div class="section-shell contact__grid">
-        <div class="reveal">
-          <p class="eyebrow"><span class="lang-en">Start your renovation</span><span class="lang-id">Mulai renovasi Anda</span></p>
-          <h2 class="section-title" id="contact-title">
-            <span class="lang-en">Move from idea to a financed, buildable scope.</span>
-            <span class="lang-id">Bergerak dari ide menuju ruang lingkup yang dapat dibiayai dan dibangun.</span>
-          </h2>
-          <p class="section-lede">
-            <span class="lang-en">Start with the financing sequence, or contact the studio directly to shape the renovation brief.</span>
-            <span class="lang-id">Mulailah dari sekuens pembiayaan, atau hubungi studio secara langsung untuk menyusun brief renovasi.</span>
-          </p>
-          <div class="contact__actions">
-            <button class="solid-link" type="button" data-open-preform data-placement="contact">
-              <span class="lang-en">Continue to Amar Bank</span>
-              <span class="lang-id">Lanjut ke Amar Bank</span>
-            </button>
-            <a class="outline-link" href="https://wa.me/6282174072041" target="_blank" rel="noopener">
-              <span class="lang-en">WhatsApp SECHA</span>
-              <span class="lang-id">WhatsApp SECHA</span>
+      <section class="process" id="process" aria-labelledby="process-title">
+        <div class="section-shell process__grid">
+          <div class="process__intro reveal">
+            <p class="eyebrow">
+              <span class="lang-en">How SECHA moves</span
+              ><span class="lang-id">Cara SECHA bekerja</span>
+            </p>
+            <h2 class="section-title" id="process-title">
+              <span class="lang-en"
+                >A clearer path from first brief to finished space.</span
+              >
+              <span class="lang-id"
+                >Jalur yang lebih jelas dari brief awal hingga ruang
+                selesai.</span
+              >
+            </h2>
+            <p class="section-lede">
+              <span class="lang-en"
+                >The sequence keeps the renovation legible at every stage, so
+                design decisions and financing decisions do not compete with
+                each other.</span
+              >
+              <span class="lang-id"
+                >Sekuens ini menjaga renovasi tetap mudah dipahami di setiap
+                tahap, sehingga keputusan desain dan pembiayaan tidak saling
+                bertentangan.</span
+              >
+            </p>
+            <a class="outline-link" href="#financing">
+              <span class="lang-en">Continue to financing</span>
+              <span class="lang-id">Lanjut ke pembiayaan</span>
             </a>
           </div>
+
+          <div class="process__steps">
+            <article class="process-step reveal">
+              <span>01</span>
+              <div>
+                <h3>
+                  <span class="lang-en">Diagnose</span
+                  ><span class="lang-id">Diagnosis</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Audit the structure, spatial flow, services, and
+                    constraints before design begins.</span
+                  ><span class="lang-id"
+                    >Mengaudit struktur, alur ruang, utilitas, dan kendala
+                    sebelum desain dimulai.</span
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <span>02</span>
+              <div>
+                <h3>
+                  <span class="lang-en">Define</span
+                  ><span class="lang-id">Definisi</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Translate the brief into plans, material studies, and a
+                    precise renovation cost base.</span
+                  ><span class="lang-id"
+                    >Menerjemahkan brief menjadi denah, studi material, dan
+                    dasar biaya renovasi yang presisi.</span
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <span>03</span>
+              <div>
+                <h3>
+                  <span class="lang-en">Finance</span
+                  ><span class="lang-id">Pembiayaan</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Connect the documented scope to Amar Bank's embedded
+                    renovation application route.</span
+                  ><span class="lang-id"
+                    >Menghubungkan ruang lingkup terdokumentasi ke jalur
+                    aplikasi renovasi embedded Amar Bank.</span
+                  >
+                </p>
+              </div>
+            </article>
+            <article class="process-step reveal">
+              <span>04</span>
+              <div>
+                <h3>
+                  <span class="lang-en">Deliver</span
+                  ><span class="lang-id">Penyelesaian</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Coordinate execution while keeping design intent, cost, and
+                    progress visibly connected.</span
+                  ><span class="lang-id"
+                    >Mengoordinasikan eksekusi sambil menjaga niat desain,
+                    biaya, dan progres tetap terhubung.</span
+                  >
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="materials" aria-labelledby="materials-title">
+        <div class="section-shell">
+          <div class="section-heading section-heading--split reveal">
+            <div>
+              <p class="eyebrow">
+                <span class="lang-en">Finish library</span
+                ><span class="lang-id">Pustaka finishing</span>
+              </p>
+              <h2 class="section-title" id="materials-title">
+                <span class="lang-en"
+                  >Finishes that feel considered, not decorated.</span
+                >
+                <span class="lang-id"
+                  >Finishing yang terasa matang, bukan sekadar dekoratif.</span
+                >
+              </h2>
+            </div>
+            <p class="section-lede">
+              <span class="lang-en"
+                >Stone, timber, daylight, and layered neutrals give each
+                renovation direction a grounded material logic.</span
+              >
+              <span class="lang-id"
+                >Batu, kayu, cahaya alami, dan lapisan netral memberi setiap
+                arah renovasi logika material yang kuat.</span
+              >
+            </p>
+          </div>
+
+          <div class="materials__grid">
+            <figure class="material-card reveal">
+              <img
+                src="assets/archive-luxury-suite.jpg"
+                alt="Neutral luxury suite with layered natural materials"
+                width="1200"
+                height="675"
+                data-alt-en="Neutral luxury suite with layered natural materials"
+                data-alt-id="Suite mewah netral dengan material alami berlapis"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="lang-en">Neutral layering</span
+                ><span class="lang-id">Lapisan netral</span>
+              </figcaption>
+            </figure>
+            <figure class="material-card reveal">
+              <img
+                src="assets/archive-minimalist-living.jpg"
+                alt="Minimalist living and dining room with stone and timber"
+                width="1200"
+                height="821"
+                data-alt-en="Minimalist living and dining room with stone and timber"
+                data-alt-id="Ruang keluarga dan makan minimalis dengan batu dan kayu"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="lang-en">Tactile restraint</span
+                ><span class="lang-id">Restraint tekstural</span>
+              </figcaption>
+            </figure>
+            <figure class="material-card reveal">
+              <img
+                src="assets/archive-tropical-suite.jpg"
+                alt="Tropical bedroom with warm wood and filtered daylight"
+                width="1200"
+                height="1200"
+                data-alt-en="Tropical bedroom with warm wood and filtered daylight"
+                data-alt-id="Kamar tropis dengan kayu hangat dan cahaya tersaring"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="lang-en">Filtered daylight</span
+                ><span class="lang-id">Cahaya tersaring</span>
+              </figcaption>
+            </figure>
+            <figure class="material-card reveal">
+              <img
+                src="assets/archive-marble-bath.jpg"
+                alt="Marble bathroom with sculptural bath and bronze details"
+                width="1200"
+                height="675"
+                data-alt-en="Marble bathroom with sculptural bath and bronze details"
+                data-alt-id="Kamar mandi marmer dengan bath skulptural dan detail perunggu"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="lang-en">Stone calm</span
+                ><span class="lang-id">Ketenangan batu</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="decision" aria-labelledby="decision-title">
+        <div class="section-shell">
+          <div class="decision__panel reveal">
+            <div>
+              <p class="eyebrow">
+                <span class="lang-en">Two renovation intents</span
+                ><span class="lang-id">Dua tujuan renovasi</span>
+              </p>
+              <h2 class="section-title" id="decision-title">
+                <span class="lang-en"
+                  >For the home you live in — or the asset you are
+                  preparing.</span
+                >
+                <span class="lang-id"
+                  >Untuk rumah yang Anda huni — atau aset yang sedang Anda
+                  siapkan.</span
+                >
+              </h2>
+            </div>
+            <div class="decision__grid">
+              <article>
+                <span>OWN-STAY</span>
+                <h3>
+                  <span class="lang-en">Upgrade daily life</span
+                  ><span class="lang-id">Tingkatkan kualitas hidup</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Prioritise comfort, storage, durability, and the way your
+                    household actually moves through the space.</span
+                  ><span class="lang-id"
+                    >Prioritaskan kenyamanan, penyimpanan, daya tahan, dan cara
+                    penghuni benar-benar bergerak di dalam ruang.</span
+                  >
+                </p>
+              </article>
+              <article>
+                <span>INVESTMENT</span>
+                <h3>
+                  <span class="lang-en">Prepare a stronger property</span
+                  ><span class="lang-id">Siapkan properti yang lebih kuat</span>
+                </h3>
+                <p>
+                  <span class="lang-en"
+                    >Shape a cleaner, more marketable finish with a scope and
+                    funding path that can be evaluated early.</span
+                  ><span class="lang-id"
+                    >Bentuk finishing yang lebih rapi dan mudah dipasarkan
+                    dengan ruang lingkup serta jalur pendanaan yang dapat
+                    dievaluasi sejak awal.</span
+                  >
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="financing"
+        id="financing"
+        aria-labelledby="financing-title"
+      >
+        <div class="section-shell financing__heading">
+          <div class="section-kicker reveal">
+            <span>05</span>
+            <span class="lang-en">Financing Chapter</span>
+            <span class="lang-id">Bab Pembiayaan</span>
+          </div>
+          <div class="financing__intro">
+            <h2 class="section-title reveal" id="financing-title">
+              <span class="lang-en">Amar Bank <em>×</em> SECHA</span>
+              <span class="lang-id">Amar Bank <em>×</em> SECHA</span>
+            </h2>
+            <p class="section-lede reveal">
+              <span class="lang-en"
+                >A guided budget simulator helps you explore a renovation plan.
+                Continue to Amar Bank when you are ready to discuss actual
+                terms.</span
+              >
+              <span class="lang-id"
+                >Simulasi anggaran terpandu membantu menjelajahi rencana
+                renovasi. Lanjutkan ke Amar Bank untuk membahas ketentuan
+                aktual.</span
+              >
+            </p>
+          </div>
         </div>
 
-        <address class="contact-card reveal">
-          <div>
-            <span><span class="lang-en">Email</span><span class="lang-id">Email</span></span>
-            <a href="mailto:info@sechahomes.com">info@sechahomes.com</a>
+        <div class="section-shell bank-partner">
+          <div class="bank-partner__brand">
+            <img
+              src="assets/amar-bank-logo.png"
+              alt="Amar Bank"
+              width="1756"
+              height="896"
+            /><span>× SECHA</span>
           </div>
           <div>
-            <span><span class="lang-en">Studio</span><span class="lang-id">Studio</span></span>
-            <a href="studio/" target="_blank" rel="noopener">SECHA Studio+</a>
+            <p class="bank-partner__eyebrow">
+              <span class="lang-en">A clearer funding conversation</span
+              ><span class="lang-id"
+                >Percakapan pendanaan yang lebih jelas</span
+              >
+            </p>
+            <h3>
+              <span class="lang-en"
+                >Plan the renovation.<br />Explore the numbers.</span
+              ><span class="lang-id"
+                >Rencanakan renovasi.<br />Jelajahi angkanya.</span
+              >
+            </h3>
+            <p>
+              <span class="lang-en"
+                >Choose your goal, balance your own funds, and compare
+                illustrative repayments before exploring the bank
+                application.</span
+              ><span class="lang-id"
+                >Pilih tujuan, seimbangkan dana pribadi, dan bandingkan
+                ilustrasi cicilan sebelum menjelajahi pengajuan bank.</span
+              >
+            </p>
+            <button class="solid-link" type="button" data-open-simulator>
+              <span class="lang-en">Start the renovation quest</span
+              ><span class="lang-id">Mulai misi renovasi</span>
+            </button>
           </div>
-          <div>
-            <span><span class="lang-en">Voice</span><span class="lang-id">Telepon</span></span>
-            <a href="tel:+6282174072041">+62 821-7407-2041</a>
-          </div>
-        </address>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="section-shell site-footer__grid">
-      <div class="site-footer__brand">
-        <img src="assets/secha-logo.png" alt="" width="76" height="76">
-        <p>SECHA</p>
-      </div>
-      <p class="site-footer__line">
-        <span class="lang-en">Design, financing, and renovation in one flow.</span>
-        <span class="lang-id">Desain, pembiayaan, dan renovasi dalam satu alur.</span>
-      </p>
-      <div class="site-footer__meta">
-        <span>© <span id="current-year"></span> SECHA</span>
-        <span class="lang-en">Made for a better way of living.</span>
-        <span class="lang-id">Untuk cara hidup yang lebih baik.</span>
-      </div>
-    </div>
-  </footer>
-
-  <div class="preform" id="preform" role="dialog" aria-modal="true" aria-labelledby="preform-title" aria-hidden="true" inert>
-    <div class="preform__backdrop" data-close-preform></div>
-    <div class="preform__panel">
-      <button class="preform__close" type="button" data-close-preform aria-label="Close pre-form">
-        <span aria-hidden="true">×</span>
-      </button>
-
-      <div class="preform__content" id="preform-form-view">
-        <div class="preform__eyebrow">
-          <img src="assets/secha-logo.png" alt="" width="34" height="34">
-          <span>SECHA × AMAR BANK</span>
         </div>
-        <h2 id="preform-title">
-          <span class="lang-en">Continue to Amar Bank.</span>
-          <span class="lang-id">Lanjut ke Amar Bank.</span>
-        </h2>
-        <p class="preform__lede">
-          <span class="lang-en">Create a reference for your renovation, then continue to Amar Bank. Your contact details are not sent to SECHA or the bank by this form.</span>
-          <span class="lang-id">Buat referensi renovasi Anda, lalu lanjutkan ke Amar Bank. Formulir ini tidak mengirim data kontak Anda ke SECHA atau bank.</span>
-        </p>
 
-        <form id="lead-form" novalidate>
-          <div class="field">
-            <label for="lead-name"><span class="lang-en">Full name</span><span class="lang-id">Nama lengkap</span></label>
-            <input id="lead-name" name="name" type="text" autocomplete="name" required minlength="2" placeholder="">
-          </div>
-          <div class="field">
-            <label for="lead-phone"><span class="lang-en">Phone number</span><span class="lang-id">Nomor telepon</span></label>
-            <input id="lead-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required minlength="7" placeholder="">
-          </div>
-          <div class="field">
-            <label for="lead-location"><span class="lang-en">Location</span><span class="lang-id">Lokasi</span></label>
-            <input id="lead-location" name="location" type="text" autocomplete="address-level2" required minlength="2" placeholder="Jakarta Selatan">
-          </div>
-
-          <p class="form-status" id="form-status" role="alert" aria-live="polite"></p>
-          <button class="preform__submit" type="submit">
-            <span class="lang-en">Create Lead ID &amp; Continue</span>
-            <span class="lang-id">Buat Lead ID &amp; Lanjutkan</span>
+        <div class="section-shell financing__note reveal">
+          <p>
+            <span class="lang-en"
+              >Explore your options. All applications, terms, and approval
+              decisions are handled by Amar Bank.</span
+            >
+            <span class="lang-id"
+              >Jelajahi pilihan Anda. Pengajuan, ketentuan, dan keputusan
+              persetujuan ditangani oleh Amar Bank.</span
+            >
+          </p>
+          <button
+            class="text-button"
+            type="button"
+            data-open-simulator
+            data-placement="financing_note"
+          >
+            <span class="lang-en">Explore the simulation</span>
+            <span class="lang-id">Jelajahi simulasi</span>
           </button>
-          <p class="preform__privacy">
-            <span class="lang-en">This form creates a reference only. Your details stay in this tab and are cleared when you close the form. Complete your application on Amar Bank’s website.</span>
-            <span class="lang-id">Formulir ini hanya membuat referensi. Data tetap di tab ini dan dihapus saat formulir ditutup. Lengkapi pengajuan di situs Amar Bank.</span>
-          </p>
-        </form>
-      </div>
-
-      <div class="preform__success" id="preform-success-view" hidden>
-        <div class="preform__success-mark" aria-hidden="true">✓</div>
-        <h2>
-          <span class="lang-en">Lead reference created.</span>
-          <span class="lang-id">Referensi lead dibuat.</span>
-        </h2>
-        <p>
-          <span class="lang-en">Use this reference if the Amar Bank team asks for your SECHA lead ID.</span>
-          <span class="lang-id">Gunakan referensi ini jika tim Amar Bank meminta Lead ID SECHA Anda.</span>
-        </p>
-        <div class="lead-reference">
-          <span>LEAD ID</span>
-          <strong id="lead-id-output">—</strong>
-          <button type="button" id="copy-lead-id">Copy</button>
         </div>
-        <a class="preform__success-link" id="amar-application-link" href="https://embedded-banking.amarbank.co.id/?client_id=ebf-sechahome-web" target="_blank" rel="noopener">
-          <span class="lang-en">Open Amar Bank Application</span>
-          <span class="lang-id">Buka Aplikasi Amar Bank</span>
-        </a>
-        <button class="preform__reset" type="button" id="preform-reset">
-          <span class="lang-en">Submit another lead</span>
-          <span class="lang-id">Kirim lead lain</span>
+      </section>
+
+      <section
+        id="recognition"
+        class="recognition section-pad"
+        aria-labelledby="recognition-title"
+        hidden
+      >
+        <div class="section-shell">
+          <p class="eyebrow">
+            <span class="lang-en">Media &amp; recognition</span
+            ><span class="lang-id">Media &amp; pengakuan</span>
+          </p>
+          <h2 class="section-title" id="recognition-title">
+            <span class="lang-en"
+              >A bigger conversation.<br />A better home.</span
+            ><span class="lang-id"
+              >Percakapan lebih luas.<br />Rumah lebih baik.</span
+            >
+          </h2>
+          <div id="recognition-cards" class="recognition-grid"></div>
+        </div>
+      </section>
+
+      <section
+        class="contact section-pad"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <div class="section-shell contact__grid">
+          <div class="reveal">
+            <p class="eyebrow">
+              <span class="lang-en">Start your renovation</span
+              ><span class="lang-id">Mulai renovasi Anda</span>
+            </p>
+            <h2 class="section-title" id="contact-title">
+              <span class="lang-en"
+                >Move from idea to a financed, buildable scope.</span
+              >
+              <span class="lang-id"
+                >Bergerak dari ide menuju ruang lingkup yang dapat dibiayai dan
+                dibangun.</span
+              >
+            </h2>
+            <p class="section-lede">
+              <span class="lang-en"
+                >Start with the financing sequence, or contact the studio
+                directly to shape the renovation brief.</span
+              >
+              <span class="lang-id"
+                >Mulailah dari sekuens pembiayaan, atau hubungi studio secara
+                langsung untuk menyusun brief renovasi.</span
+              >
+            </p>
+            <div class="contact__actions">
+              <button
+                class="solid-link"
+                type="button"
+                data-open-simulator
+                data-placement="contact"
+              >
+                <span class="lang-en">Continue to Amar Bank</span>
+                <span class="lang-id">Lanjut ke Amar Bank</span>
+              </button>
+              <a
+                class="outline-link"
+                href="https://wa.me/6282174072041"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="lang-en">WhatsApp SECHA</span>
+                <span class="lang-id">WhatsApp SECHA</span>
+              </a>
+            </div>
+          </div>
+
+          <address class="contact-card reveal">
+            <div>
+              <span
+                ><span class="lang-en">Email</span
+                ><span class="lang-id">Email</span></span
+              >
+              <a href="mailto:info@sechahomes.com">info@sechahomes.com</a>
+            </div>
+            <div>
+              <span
+                ><span class="lang-en">Studio</span
+                ><span class="lang-id">Studio</span></span
+              >
+              <a href="studio/" target="_blank" rel="noopener">SECHA Studio+</a>
+            </div>
+            <div>
+              <span
+                ><span class="lang-en">Voice</span
+                ><span class="lang-id">Telepon</span></span
+              >
+              <a href="tel:+6282174072041">+62 821-7407-2041</a>
+            </div>
+          </address>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell">
+        <button class="replay-opening" type="button" data-replay-opening>
+          <span class="lang-en">Replay the assembly film</span
+          ><span class="lang-id">Putar ulang film perakitan</span>
         </button>
       </div>
-    </div>
-  </div>
+      <div class="section-shell site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="assets/secha-logo.png" alt="" width="76" height="76" />
+          <p>SECHA</p>
+        </div>
+        <p class="site-footer__line">
+          <span class="lang-en"
+            >Design, financing, and renovation in one flow.</span
+          >
+          <span class="lang-id"
+            >Desain, pembiayaan, dan renovasi dalam satu alur.</span
+          >
+        </p>
+        <div class="site-footer__meta">
+          <span>© <span id="current-year"></span> SECHA</span>
+          <span class="lang-en">Made for a better way of living.</span>
+          <span class="lang-id">Untuk cara hidup yang lebih baik.</span>
+        </div>
+      </div>
+    </footer>
 
-  <script type="module" src="assets/app.js"></script>
-</body>
+    <div
+      class="preform"
+      id="preform"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="preform-title"
+      aria-hidden="true"
+      inert
+    >
+      <div class="preform__backdrop" data-close-preform></div>
+      <div class="preform__panel">
+        <button
+          class="preform__close"
+          type="button"
+          data-close-preform
+          aria-label="Close pre-form"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+
+        <div class="preform__content" id="preform-form-view">
+          <div class="preform__eyebrow">
+            <img src="assets/secha-logo.png" alt="" width="34" height="34" />
+            <span>SECHA ×</span
+            ><img
+              class="preform-bank-logo"
+              src="assets/amar-bank-logo.png"
+              alt="Amar Bank"
+              width="1756"
+              height="896"
+            />
+          </div>
+          <h2 id="preform-title">
+            <span class="lang-en">Continue to Amar Bank.</span>
+            <span class="lang-id">Lanjut ke Amar Bank.</span>
+          </h2>
+          <p class="preform__lede">
+            <span class="lang-en"
+              >Create a reference for your renovation, then continue to Amar
+              Bank. Your contact details are not sent to SECHA or the bank by
+              this form.</span
+            >
+            <span class="lang-id"
+              >Buat referensi renovasi Anda, lalu lanjutkan ke Amar Bank.
+              Formulir ini tidak mengirim data kontak Anda ke SECHA atau
+              bank.</span
+            >
+          </p>
+
+          <form id="lead-form" novalidate>
+            <div class="field">
+              <label for="lead-name"
+                ><span class="lang-en">Full name</span
+                ><span class="lang-id">Nama lengkap</span></label
+              >
+              <input
+                id="lead-name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                minlength="2"
+                placeholder=""
+              />
+            </div>
+            <div class="field">
+              <label for="lead-phone"
+                ><span class="lang-en">Phone number</span
+                ><span class="lang-id">Nomor telepon</span></label
+              >
+              <input
+                id="lead-phone"
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel"
+                required
+                minlength="7"
+                placeholder=""
+              />
+            </div>
+            <div class="field">
+              <label for="lead-location"
+                ><span class="lang-en">Location</span
+                ><span class="lang-id">Lokasi</span></label
+              >
+              <input
+                id="lead-location"
+                name="location"
+                type="text"
+                autocomplete="address-level2"
+                required
+                minlength="2"
+                placeholder="Jakarta Selatan"
+              />
+            </div>
+
+            <p
+              class="form-status"
+              id="form-status"
+              role="alert"
+              aria-live="polite"
+            ></p>
+            <button class="preform__submit" type="submit">
+              <span class="lang-en">Create Lead ID &amp; Continue</span>
+              <span class="lang-id">Buat Lead ID &amp; Lanjutkan</span>
+            </button>
+            <p class="preform__privacy">
+              <span class="lang-en"
+                >This form creates a reference only. Your details stay in this
+                tab and are cleared when you close the form. Complete your
+                application on Amar Bank’s website.</span
+              >
+              <span class="lang-id"
+                >Formulir ini hanya membuat referensi. Data tetap di tab ini dan
+                dihapus saat formulir ditutup. Lengkapi pengajuan di situs Amar
+                Bank.</span
+              >
+            </p>
+          </form>
+        </div>
+
+        <div class="preform__success" id="preform-success-view" hidden>
+          <div class="preform__success-mark" aria-hidden="true">✓</div>
+          <h2>
+            <span class="lang-en">Lead reference created.</span>
+            <span class="lang-id">Referensi lead dibuat.</span>
+          </h2>
+          <p>
+            <span class="lang-en"
+              >Use this reference if the Amar Bank team asks for your SECHA lead
+              ID.</span
+            >
+            <span class="lang-id"
+              >Gunakan referensi ini jika tim Amar Bank meminta Lead ID SECHA
+              Anda.</span
+            >
+          </p>
+          <div class="lead-reference">
+            <span>LEAD ID</span>
+            <strong id="lead-id-output">—</strong>
+            <button type="button" id="copy-lead-id">Copy</button>
+          </div>
+          <a
+            class="preform__success-link"
+            id="amar-application-link"
+            href="https://embedded-banking.amarbank.co.id/?client_id=ebf-sechahome-web"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="lang-en">Open Amar Bank Application</span>
+            <span class="lang-id">Buka Aplikasi Amar Bank</span>
+          </a>
+          <button class="preform__reset" type="button" id="preform-reset">
+            <span class="lang-en">Submit another lead</span>
+            <span class="lang-id">Kirim lead lain</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="loan-simulator"
+      class="loan-simulator"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="simulator-title"
+      hidden
+      inert
+    >
+      <div class="sim-backdrop" data-close-simulator></div>
+      <div class="sim-panel">
+        <button
+          class="sim-close"
+          data-close-simulator
+          type="button"
+          aria-label="Close simulation"
+        >
+          ×
+        </button>
+        <p id="simulator-eyebrow" class="eyebrow"></p>
+        <h2 id="simulator-title"></h2>
+        <ol
+          id="simulator-progress"
+          class="sim-progress"
+          aria-label="Planning milestones"
+        ></ol>
+        <div id="simulator-content"></div>
+        <p id="simulator-status" role="alert"></p>
+        <p id="simulator-disclaimer" class="sim-disclaimer"></p>
+      </div>
+    </div>
+
+    <script type="module" src="assets/app.js"></script>
+  </body>
 </html>

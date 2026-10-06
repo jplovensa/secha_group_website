@@ -35,3 +35,11 @@ Intentional SECHA redesign using the supplied architecture photos and Inter. Loc
 Verified locally: two actual 3D canvas renderers; all photos load; direction modals; duplicate-free material shortlist and removal; keyboard containment; five-step brief and reset; size/tier pricing; final WhatsApp brief; native FAQs; and no overflow at 320, 390, 768, 1024, and 1440px. Five unit tests cover estimates, safe enquiry encoding, and complete brief requirements, alongside the main financing tests. The shared intro's playback, skip, completion, reduced-motion, and failure checks pass.
 
 Latest local result: passed. Reference comparison remains unavailable because The Makeover website could not be accessed. The user authorized proceeding with a SECHA redesign and pushing it. Live deployment is distinct from the Git push and is not claimed here.
+
+## Mobile playback, financing quest, and media revision
+
+The shared intro now supports manual replay, pause, seek, and replay after completion. Automatic loading has bounded recovery from blocked playback, failed media, or a stalled play promise; the content's original inert state is restored. Studio defers WebGL loading until the showroom approaches the viewport and the intro has closed. Local dev serving now supports byte ranges for video seeking.
+
+Chromium mobile emulation verified natural autoplay completion, manual pause/seek/resume/end/replay, Escape, restored content, blocked and stalled autoplay, missing media, and lazy Studio canvases. Simulator checks cover goal gating, financing lower-bound validation, owner-provided default annual rate and reducing-balance method, service/admin fee display, term changes, bank-reference modal handoff, and overflow at 320/390/768/1440px. Nine unit tests pass. These checks do not constitute physical iPhone/Safari testing.
+
+Media includes the owner-provided SpotNews link. Five specific recognition cards have a labelled local design preview and remain pending/publicly hidden. Neither the article nor the named accolade sources could be fetched because the network proxy returned CONNECT 403. The domain configuration draft is saved but requires review/save/publish to activate.

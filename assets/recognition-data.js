@@ -1,0 +1,51 @@
+/** Company-supplied leads, pending independent verification. Never publish as awards without evidence. */
+export const recognition = [
+  {
+    name: "SpotNews",
+    category: "In the media",
+    title: "SECHA in the news",
+    titleId: "SECHA dalam berita",
+    status: "provided",
+    source: { url: "https://getspotnews.com/biz/1091", quote: null },
+  },
+  {
+    name: "Forbes India",
+    category: "Media recognition",
+    title: "Select 200",
+    titleId: "Select 200",
+    status: "pending",
+    source: null,
+  },
+  {
+    name: "Startup Studio Indonesia",
+    category: "Startup ecosystem",
+    title: "Startup Studio participation",
+    titleId: "Partisipasi Startup Studio",
+    status: "pending",
+    source: null,
+  },
+  {
+    name: "Antler",
+    category: "Investment ecosystem",
+    title: "Backing from Antler",
+    titleId: "Dukungan Antler",
+    status: "pending",
+    source: null,
+  },
+  {
+    name: "Startupbootcamp",
+    category: "Startup ecosystem",
+    title: "Startupbootcamp recognition",
+    titleId: "Pengakuan Startupbootcamp",
+    status: "pending",
+    source: null,
+  },
+  {
+    name: "BonBillo",
+    category: "Startup ecosystem",
+    title: "BonBillo recognition",
+    titleId: "Pengakuan BonBillo",
+    status: "pending",
+    source: null,
+  },
+];

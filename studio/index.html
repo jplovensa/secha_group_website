@@ -18,6 +18,8 @@
     <section
       class="opening"
       id="opening"
+      role="dialog"
+      aria-modal="true"
       aria-label="SECHA opening film"
       hidden
     >
@@ -39,6 +41,20 @@
       <p class="opening__stage" id="opening-stage" aria-hidden="true"></p>
       <div class="opening__track" aria-hidden="true">
         <span id="opening-progress"></span>
+      </div>
+      <div class="opening__controls">
+        <button type="button" id="opening-play">Play</button
+        ><label class="opening__seek-label" for="opening-seek"
+          ><span class="lang-en">Video progress</span
+          ><span class="lang-id">Progres video</span></label
+        ><input
+          id="opening-seek"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Video progress"
+        />
       </div>
       <button class="opening__skip" id="opening-skip" type="button">
         <span class="lang-en">Skip intro</span
@@ -521,6 +537,11 @@
       </div>
     </aside>
     <footer class="studio-footer">
+      <div class="shell">
+        <button class="replay-opening" type="button" data-replay-opening>
+          Replay the assembly film
+        </button>
+      </div>
       <div class="shell">
         <a class="studio-brand" href="../">SECHA <span>/ STUDIO+</span></a>
         <p>Spaces for your next chapter.</p>

@@ -11,7 +11,7 @@ npm run dev
 npm test
 ```
 
-The development server listens on port 4173. Stop it with Ctrl+C. Serve the repository root with any static web host, including GitHub Pages. Relative asset paths work under a repository subpath. ES modules require HTTP serving rather than opening the HTML file directly.
+The development server listens on port 4173 and supports HTTP byte ranges for native video seeking. Stop it with Ctrl+C. Serve the repository root with any static web host, including GitHub Pages. Relative asset paths work under a repository subpath. ES modules require HTTP serving rather than opening the HTML file directly.
 
 ## Structure
 
@@ -79,3 +79,11 @@ Studio+ now uses the same navy, ivory, bronze, and self-hosted Inter system as S
 The five-step brief collects purpose → design direction → room size → design package → review. Package buttons preserve the full journey rather than skip essential choices. The material shortlist updates the final WhatsApp brief; it supports replacement and removal without duplicate entries. Dialogs and shortlist drawers trap keyboard focus and restore it on close.
 
 The user requested https://www.themakeover.my/ as a sequence reference. The site was inaccessible due to the environment network policy, so this revision uses a SECHA-specific customer journey and does not claim to reproduce that site's observed sequence. No reference content or screenshots were fabricated.
+
+## Replayable intro and renovation planning
+
+The opening film has play/pause, seek, and footer replay controls on both pages. Its automatic run releases the page after a 2.5-second startup failure or an 8-second playback stall. Reduced-motion and Save-Data skip the automatic intro. Manual replay stays open for playback control. Studio WebGL loads when a showroom section approaches the viewport, after the intro closes.
+
+`assets/loan-model.js` contains independent flat-interest and reducing-balance calculations. The guided simulator uses editable **example** assumptions (12% p.a. / 1% monthly equivalent, reducing balance, 2% one-time SECHA service fee, 0% adjustable bank/admin fee, 12 months); financing input spans IDR 20–500 million. These are owner-provided calculator defaults, not confirmed Amar Bank terms. Insurance is excluded; insurance and early repayment follow the financing partner. Fees are paid upfront and excluded from the monthly payment. No old rate table was found in the uploaded site files. The simulator passes users to the existing reference form and bank handoff; it does not submit an application or provide an approval.
+
+The media section links to the owner-provided SpotNews article. Specific recognition cards are built but held from public display until independently sourced. See [research/recognition.md](research/recognition.md) for the research blocker and verification requirements.

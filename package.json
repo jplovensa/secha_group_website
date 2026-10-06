@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 4173 --bind 0.0.0.0",
+    "dev": "python3 tools/dev-server.py",
     "test": "node --test tests/*.test.js",
     "build:studio": "tailwindcss -c studio/tailwind.config.cjs -i studio/assets/tailwind.css -o studio/assets/utilities.css --minify"
   },

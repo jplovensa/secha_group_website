@@ -1,10 +1,57 @@
 import { initOpening } from "../../assets/opening.js";
-import { initScenes } from "./scenes.js";
+
 import { initShowroom } from "./showroom.js";
 import { initModal } from "./modal.js";
 import { initBrief } from "./brief.js";
 const modal = initModal();
-const scenes = initScenes();
+let realScenes,
+  cameraIndex = 0,
+  currentMaterial;
+const scenes = {
+  camera(index) {
+    cameraIndex = index;
+    realScenes?.camera(index);
+  },
+  material(value) {
+    currentMaterial = value;
+    realScenes?.material(value);
+  },
+};
+let loadingScenes = false;
+async function loadScenes() {
+  if (loadingScenes || !document.querySelector("#opening").hidden) return;
+  loadingScenes = true;
+  try {
+    const module = await import("./scenes.js");
+    realScenes = module.initScenes();
+    realScenes.camera(cameraIndex);
+    if (currentMaterial) realScenes.material(currentMaterial);
+  } catch {
+    document
+      .querySelectorAll("#moodboard-canvas,#vignette-canvas")
+      .forEach((e) => {
+        e.textContent =
+          "Preview unavailable. You can still choose your materials.";
+      });
+  }
+}
+const observer = new IntersectionObserver(
+  (entries) => {
+    if (entries.some((e) => e.isIntersecting)) loadScenes();
+  },
+  { rootMargin: "100px" },
+);
+observer.observe(document.querySelector("#moodboards"));
+observer.observe(document.querySelector("#finishing-studio"));
+document.addEventListener("secha:introclosed", () => {
+  if (
+    ["#moodboards", "#finishing-studio"].some((selector) => {
+      const r = document.querySelector(selector).getBoundingClientRect();
+      return r.top < innerHeight + 100 && r.bottom > -100;
+    })
+  )
+    loadScenes();
+});
 const showroom = initShowroom(scenes, modal.openModal);
 const brief = initBrief(showroom.getSelections);
 const actions = { ...modal, ...showroom, ...brief };
