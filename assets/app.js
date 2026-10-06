@@ -6,7 +6,7 @@ import { initNavigation } from "./navigation.js";
 import { initFinancing } from "./financing.js";
 const navigation = initNavigation();
 const financing = initFinancing(navigation);
-const simulator = initSimulator((trigger) => financing.open(trigger));
+const simulator = initSimulator();
 initLanguage(() => {
   navigation.refresh();
   financing.refresh();

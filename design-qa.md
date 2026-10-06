@@ -43,3 +43,9 @@ The shared intro now supports manual replay, pause, seek, and replay after compl
 Chromium mobile emulation verified natural autoplay completion, manual pause/seek/resume/end/replay, Escape, restored content, blocked and stalled autoplay, missing media, and lazy Studio canvases. Simulator checks cover goal gating, financing lower-bound validation, owner-provided default annual rate and reducing-balance method, service/admin fee display, term changes, bank-reference modal handoff, and overflow at 320/390/768/1440px. Nine unit tests pass. These checks do not constitute physical iPhone/Safari testing.
 
 Media includes the owner-provided SpotNews link. Five specific recognition cards have a labelled local design preview and remain pending/publicly hidden. Neither the article nor the named accolade sources could be fetched because the network proxy returned CONNECT 403. The domain configuration draft is saved but requires review/save/publish to activate.
+
+## Standalone loan simulator menu
+
+The loan simulator is now an independent desktop/mobile menu action. Completing it closes the planning dialog without opening the bank reference form. Amar Bank banner and financing CTAs open the separate bank reference form; the extra bank logo/card beneath the banner is removed. Mobile simulator closure restores focus to the visible menu toggle.
+
+Nine unit tests pass. Chromium verified these independent flows, mobile menu closing and focus restoration, removed logo/card, and no document overflow at 320/390/900/1024/1440px, with zero browser errors.

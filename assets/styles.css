@@ -1265,47 +1265,6 @@ body.intro-open {
     font-size: 9px;
   }
 }
-.bank-partner {
-  background: #fffdf9;
-  border: 1px solid var(--line);
-  padding: 45px;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: center;
-}
-.bank-partner__brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-.bank-partner__brand img {
-  width: 230px;
-  height: auto;
-}
-.bank-partner__brand span {
-  font-size: 17px;
-  letter-spacing: 0.14em;
-}
-.bank-partner__eyebrow {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--bronze);
-  margin-bottom: 18px;
-}
-.bank-partner h3 {
-  font-size: 35px;
-  line-height: 1.15;
-  font-weight: 500;
-  letter-spacing: -0.04em;
-}
-.bank-partner > div > p:not(.bank-partner__eyebrow) {
-  font-size: 13px;
-  color: var(--muted);
-  margin: 20px 0 25px;
-}
 .loan-simulator {
   position: fixed;
   inset: 0;
@@ -1545,25 +1504,6 @@ body.intro-open {
   outline-offset: 4px;
 }
 @media (max-width: 600px) {
-  .bank-partner {
-    padding: 30px 25px;
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-  .bank-partner__brand {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .bank-partner__brand img {
-    width: 150px;
-  }
-  .bank-partner__brand span {
-    font-size: 12px;
-  }
-  .bank-partner h3 {
-    font-size: 30px;
-  }
   .loan-simulator {
     padding: 12px;
   }
@@ -1664,4 +1604,22 @@ body.intro-open {
     min-height: 180px;
     padding: 25px;
   }
+}
+
+.desktop-nav .nav-simulator {
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-size: 11px;
+  color: var(--muted);
+}
+.desktop-nav .nav-simulator:hover {
+  color: var(--ink);
+}
+.mobile-nav .nav-simulator {
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+  font: 400 30px var(--display);
+  min-height: 44px;
 }

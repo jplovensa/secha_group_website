@@ -126,6 +126,16 @@
           ><span class="lang-en">Contact</span
           ><span class="lang-id">Kontak</span></a
         >
+        <button
+          class="nav-simulator"
+          type="button"
+          data-open-simulator
+          aria-haspopup="dialog"
+          aria-controls="loan-simulator"
+        >
+          <span class="lang-en">Loan Simulator</span
+          ><span class="lang-id">Simulasi Pinjaman</span>
+        </button>
       </nav>
 
       <div class="header-actions">
@@ -150,7 +160,7 @@
         <button
           class="header-cta"
           type="button"
-          data-open-simulator
+          data-open-preform
           data-placement="header"
         >
           <span class="lang-en">Check Financing</span>
@@ -196,7 +206,17 @@
         ><span class="lang-en">Contact</span
         ><span class="lang-id">Kontak</span></a
       >
-      <button type="button" data-open-simulator data-placement="mobile_nav">
+      <button
+        class="nav-simulator"
+        type="button"
+        data-open-simulator
+        aria-haspopup="dialog"
+        aria-controls="loan-simulator"
+      >
+        <span class="lang-en">Loan Simulator</span
+        ><span class="lang-id">Simulasi Pinjaman</span>
+      </button>
+      <button type="button" data-open-preform data-placement="mobile_nav">
         <span class="lang-en">Check Financing</span>
         <span class="lang-id">Cek Pembiayaan</span>
       </button>
@@ -234,7 +254,7 @@
               <button
                 class="solid-link"
                 type="button"
-                data-open-simulator
+                data-open-preform
                 data-placement="hero"
               >
                 <span class="lang-en">Check financing options</span>
@@ -805,13 +825,13 @@
             </h2>
             <p class="section-lede reveal">
               <span class="lang-en"
-                >A guided budget simulator helps you explore a renovation plan.
-                Continue to Amar Bank when you are ready to discuss actual
+                >Explore financing with Amar Bank. Use the separate Loan
+                Simulator menu to plan your budget before discussing actual
                 terms.</span
               >
               <span class="lang-id"
-                >Simulasi anggaran terpandu membantu menjelajahi rencana
-                renovasi. Lanjutkan ke Amar Bank untuk membahas ketentuan
+                >Jelajahi pembiayaan bersama Amar Bank. Gunakan menu Simulasi
+                Pinjaman untuk merencanakan anggaran sebelum membahas ketentuan
                 aktual.</span
               >
             </p>
@@ -821,7 +841,7 @@
         <a
           class="amar-banner"
           href="https://embedded-banking.amarbank.co.id/?client_id=ebf-sechahome-web"
-          data-open-simulator
+          data-open-preform
           data-placement="banner"
           aria-label="Explore Amar Bank renovation financing"
         >
@@ -843,46 +863,6 @@
           />
         </a>
 
-        <div class="section-shell bank-partner">
-          <div class="bank-partner__brand">
-            <img
-              src="assets/amar-bank-logo.png"
-              alt="Amar Bank"
-              width="1756"
-              height="896"
-            /><span>× SECHA</span>
-          </div>
-          <div>
-            <p class="bank-partner__eyebrow">
-              <span class="lang-en">A clearer funding conversation</span
-              ><span class="lang-id"
-                >Percakapan pendanaan yang lebih jelas</span
-              >
-            </p>
-            <h3>
-              <span class="lang-en"
-                >Plan the renovation.<br />Explore the numbers.</span
-              ><span class="lang-id"
-                >Rencanakan renovasi.<br />Jelajahi angkanya.</span
-              >
-            </h3>
-            <p>
-              <span class="lang-en"
-                >Choose your goal, balance your own funds, and compare
-                illustrative repayments before exploring the bank
-                application.</span
-              ><span class="lang-id"
-                >Pilih tujuan, seimbangkan dana pribadi, dan bandingkan
-                ilustrasi cicilan sebelum menjelajahi pengajuan bank.</span
-              >
-            </p>
-            <button class="solid-link" type="button" data-open-simulator>
-              <span class="lang-en">Start the renovation quest</span
-              ><span class="lang-id">Mulai misi renovasi</span>
-            </button>
-          </div>
-        </div>
-
         <div class="section-shell financing__note reveal">
           <p>
             <span class="lang-en"
@@ -897,11 +877,11 @@
           <button
             class="text-button"
             type="button"
-            data-open-simulator
+            data-open-preform
             data-placement="financing_note"
           >
-            <span class="lang-en">Explore the simulation</span>
-            <span class="lang-id">Jelajahi simulasi</span>
+            <span class="lang-en">Continue to Amar Bank</span>
+            <span class="lang-id">Lanjut ke Amar Bank</span>
           </button>
         </div>
       </section>
@@ -962,7 +942,7 @@
               <button
                 class="solid-link"
                 type="button"
-                data-open-simulator
+                data-open-preform
                 data-placement="contact"
               >
                 <span class="lang-en">Continue to Amar Bank</span>

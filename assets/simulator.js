@@ -23,8 +23,7 @@ const copy = {
     method: "Interest calculation",
     flat: "Flat interest",
     reducing: "Reducing balance",
-    assumptions:
-      "Editable example assumptions — not Amar Bank rates or an offer.",
+    assumptions: "Editable planning assumptions — not a financing offer.",
     next: "Continue",
     back: "Back",
     review: "Review my plan",
@@ -36,10 +35,10 @@ const copy = {
     covered: "Budget covered by your plan",
     complete: "Your plan is mapped.",
     ready: "A planning milestone, not a loan approval.",
-    continue: "Explore the bank application",
+    continue: "Finish planning",
     restart: "Start a new plan",
     disclaimer:
-      "Illustration only. Loan eligibility, actual interest, fees, available terms, and approval are determined by Amar Bank. Calculator range: IDR 20–500 million. SECHA service fee: 2% one-time; bank/admin fee: adjustable, initially 0%. Fees are assumed paid upfront, not financed. Insurance is excluded; insurance and early repayment terms are subject to the financing partner.",
+      "Illustration only. Loan eligibility, actual interest, fees, available terms, and approval are determined by the financing partner. Calculator range: IDR 20–500 million. SECHA service fee: 2% one-time; bank/admin fee: adjustable, initially 0%. Fees are assumed paid upfront, not financed. Insurance is excluded; insurance and early repayment terms are subject to the financing partner.",
     error: "Please enter valid amounts and assumptions.",
     goalRequired: "Choose a renovation goal to continue.",
     months: "months",
@@ -72,7 +71,7 @@ const copy = {
     flat: "Bunga flat",
     reducing: "Saldo menurun",
     assumptions:
-      "Asumsi contoh dapat diubah — bukan bunga atau penawaran Amar Bank.",
+      "Asumsi perencanaan dapat diubah — bukan penawaran pembiayaan.",
     next: "Lanjut",
     back: "Kembali",
     review: "Tinjau rencana",
@@ -84,10 +83,10 @@ const copy = {
     covered: "Anggaran tercakup dalam rencana",
     complete: "Rencana Anda telah dipetakan.",
     ready: "Tahap perencanaan, bukan persetujuan pinjaman.",
-    continue: "Jelajahi pengajuan bank",
+    continue: "Selesai merencanakan",
     restart: "Buat rencana baru",
     disclaimer:
-      "Hanya ilustrasi. Kelayakan, bunga aktual, biaya, pilihan jangka waktu, dan persetujuan ditentukan Amar Bank. Rentang kalkulator: Rp20–500 juta. Biaya layanan SECHA: 2% sekali bayar; biaya bank/admin dapat diubah, awalnya 0%. Biaya diasumsikan dibayar di muka, bukan dibiayai. Asuransi tidak termasuk; ketentuan asuransi dan pelunasan awal mengikuti mitra pembiayaan.",
+      "Hanya ilustrasi. Kelayakan, bunga aktual, biaya, pilihan jangka waktu, dan persetujuan ditentukan mitra pembiayaan. Rentang kalkulator: Rp20–500 juta. Biaya layanan SECHA: 2% sekali bayar; biaya bank/admin dapat diubah, awalnya 0%. Biaya diasumsikan dibayar di muka, bukan dibiayai. Asuransi tidak termasuk; ketentuan asuransi dan pelunasan awal mengikuti mitra pembiayaan.",
     error: "Masukkan jumlah dan asumsi yang valid.",
     goalRequired: "Pilih tujuan renovasi untuk melanjutkan.",
     months: "bulan",
@@ -97,7 +96,7 @@ const copy = {
     note: "Coba jangka waktu lebih pendek atau pinjaman lebih kecil untuk membandingkan total biaya.",
   },
 };
-export function initSimulator(onContinue) {
+export function initSimulator() {
   const modal = document.querySelector("#loan-simulator");
   const body = modal.querySelector("#simulator-content");
   const progress = modal.querySelector("#simulator-progress");
@@ -136,7 +135,9 @@ export function initSimulator(onContinue) {
   }
   function open(trigger) {
     reset();
-    previousFocus = trigger;
+    previousFocus = trigger.closest("#mobile-nav")
+      ? document.querySelector("#menu-toggle")
+      : trigger;
     locked = [...document.body.children]
       .filter((e) => e !== modal && e.tagName !== "SCRIPT")
       .map((element) => ({ element, inert: element.inert }));
@@ -205,7 +206,9 @@ export function initSimulator(onContinue) {
     }
     if (!okay) {
       status.textContent = t().error;
-      const invalid = inputs.find((e) => e.getAttribute("aria-invalid") === "true");
+      const invalid = inputs.find(
+        (e) => e.getAttribute("aria-invalid") === "true",
+      );
       const details = invalid?.closest("details");
       if (details) details.open = true;
       invalid?.focus();
@@ -268,9 +271,7 @@ export function initSimulator(onContinue) {
       render(true);
     }
     if (event.target.closest("[data-sim-continue]")) {
-      const trigger = previousFocus;
       close();
-      onContinue(trigger);
     }
   });
   document.querySelectorAll("[data-open-simulator]").forEach((trigger) =>
