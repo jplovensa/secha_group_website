@@ -1,4 +1,4 @@
-// Public GA4 web-stream ID. Tracking stays disabled until the owner supplies it.
+// Public GA4 web-stream ID for SECHA's private banner-click report.
 export const analyticsConfig = {
-  measurementId: "",
+  measurementId: "G-0923E992Z4",
 };

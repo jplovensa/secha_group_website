@@ -112,7 +112,7 @@ The Featured Work section uses an explicit Watch button and `preload="none"`; th
 
 ## Private Amar Bank banner click report (GA4)
 
-`assets/analytics-config.js` holds the public GA4 Web stream measurement ID. It is empty until supplied by the owner; no analytics script loads or events are queued while it is unset. This integration is for the banner counter: automatic page views are disabled.
+`assets/analytics-config.js` holds the owner-supplied public GA4 Web stream measurement ID, `G-0923E992Z4`. Tracking is configured for this stream; clearing the ID disables script loading and event queuing. This integration is for the banner counter: automatic page views are disabled.
 
 Create an account/property at https://analytics.google.com/ using the owner's Google account. Set the reporting timezone to Asia/Jakarta and currency to IDR, choose a Web data stream with URL `https://www.sechahome.com`, and copy its Measurement ID (`G-…`). **Turn off Enhanced Measurement in this stream before connecting it.** Automatic outbound-link measurement would otherwise send the bank URL, which can contain a phone number and enquiry identifier. The custom event deliberately sends neither.
 
