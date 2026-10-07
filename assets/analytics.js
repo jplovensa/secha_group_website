@@ -3,6 +3,15 @@ import { getLanguage } from "./i18n.js";
 
 export const BANNER_CLICK_EVENT = "amar_bank_banner_click";
 
+export function analyticsPageUrl(value) {
+  try {
+    const url = new URL(value);
+    return ["http:", "https:"].includes(url.protocol) ? `${url.origin}${url.pathname}` : "";
+  } catch {
+    return "";
+  }
+}
+
 export function initBannerAnalytics() {
   const id = analyticsConfig.measurementId.trim();
   if (!/^G-[A-Z0-9]{4,}$/.test(id)) return false;
@@ -11,10 +20,12 @@ export function initBannerAnalytics() {
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
   window.gtag("js", new Date());
-  // This integration counts banner activations. Disable Enhanced Measurement
+  // Disable Enhanced Measurement
   // in the GA4 stream: automatic outbound tracking would capture bank URLs.
   window.gtag("config", id, {
-    send_page_view: false,
+    send_page_view: true,
+    page_location: analyticsPageUrl(window.location.href),
+    page_referrer: analyticsPageUrl(document.referrer),
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
   });
