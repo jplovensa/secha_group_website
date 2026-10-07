@@ -1,10 +1,11 @@
 import { translations, getLanguage } from "./i18n.js";
 const BANK_URL =
   "https://embedded-banking.amarbank.co.id/?client_id=ebf-sechahome-web";
-export function createApplicationUrl(reference, language) {
+export function createApplicationUrl(reference, language, phoneNumber = "") {
   const url = new URL(BANK_URL);
   url.searchParams.set("tagging_id", "SECHA_AMARBANK_2026");
   url.searchParams.set("id_identifier", reference);
+  if (phoneNumber) url.searchParams.set("phoneNumber", phoneNumber);
   url.searchParams.set("utm_source", "secha_home");
   url.searchParams.set("utm_medium", "website");
   url.searchParams.set("utm_campaign", "amarbank_renovation_financing_2026");
@@ -40,8 +41,9 @@ export function initFinancing(navigation) {
     return `SCHA-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomUUID().toUpperCase()}`;
   }
   let reference = newReference();
+  let submittedPhone = "";
   function refreshLinks() {
-    const url = createApplicationUrl(reference, getLanguage());
+    const url = createApplicationUrl(reference, getLanguage(), submittedPhone);
     bankLinks.forEach((anchor) => (anchor.href = url));
   }
   refreshLinks();
@@ -55,6 +57,7 @@ export function initFinancing(navigation) {
     formView.hidden = false;
     successView.hidden = true;
     reference = newReference();
+    submittedPhone = "";
     output.textContent = "—";
     refreshLinks();
     copy.textContent = translations[getLanguage()].copy;
@@ -136,6 +139,7 @@ export function initFinancing(navigation) {
       fields[failed].focus();
       return;
     }
+    submittedPhone = fields[1].value.trim();
     output.textContent = reference;
     refreshLinks();
     formView.hidden = true;

@@ -14,3 +14,12 @@ test('phone validation accepts common formats and rejects text or invalid length
   for (const value of ['0812 3456 7890', '+62 (821) 7407-2041']) assert.equal(validPhone(value), true);
   for (const value of ['abc08123456789','123','12345678901234567','']) assert.equal(validPhone(value), false);
 });
+test('bank handoff includes the entered phone number with safe query encoding', () => {
+  const phone = '+62 (821) 7407-2041';
+  const url = new URL(createApplicationUrl('SCHA-test', 'en', phone));
+  assert.equal(url.searchParams.get('client_id'), 'ebf-sechahome-web');
+  assert.equal(url.searchParams.get('phoneNumber'), phone);
+  assert.equal(url.searchParams.get('id_identifier'), 'SCHA-test');
+  assert.equal(url.searchParams.get('utm_content'), 'lead_preform_en');
+  for (const key of ['name', 'location', 'phone', 'lead_id']) assert.equal(url.searchParams.has(key), false);
+});
