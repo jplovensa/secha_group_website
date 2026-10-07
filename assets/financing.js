@@ -4,7 +4,7 @@ const BANK_URL =
 export function createApplicationUrl(reference, language) {
   const url = new URL(BANK_URL);
   url.searchParams.set("tagging_id", "SECHA_AMARBANK_2026");
-  url.searchParams.set("lead_id", reference);
+  url.searchParams.set("id_identifier", reference);
   url.searchParams.set("utm_source", "secha_home");
   url.searchParams.set("utm_medium", "website");
   url.searchParams.set("utm_campaign", "amarbank_renovation_financing_2026");
@@ -26,6 +26,7 @@ export function initFinancing(navigation) {
   const status = document.querySelector("#form-status");
   const fields = [...form.querySelectorAll("input")];
   const link = document.querySelector("#amar-application-link");
+  const bankLinks = [link, ...document.querySelectorAll("a[data-open-preform]")];
   const output = document.querySelector("#lead-id-output");
   const copy = document.querySelector("#copy-lead-id");
   const background = [
@@ -35,7 +36,15 @@ export function initFinancing(navigation) {
     document.querySelector(".skip-link"),
   ];
   let previousFocus;
-  let reference = "";
+  function newReference() {
+    return `SCHA-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomUUID().toUpperCase()}`;
+  }
+  let reference = newReference();
+  function refreshLinks() {
+    const url = createApplicationUrl(reference, getLanguage());
+    bankLinks.forEach((anchor) => (anchor.href = url));
+  }
+  refreshLinks();
   function reset() {
     form.reset();
     fields.forEach((input) => {
@@ -45,9 +54,9 @@ export function initFinancing(navigation) {
     status.textContent = "";
     formView.hidden = false;
     successView.hidden = true;
-    reference = "";
+    reference = newReference();
     output.textContent = "—";
-    link.href = BANK_URL;
+    refreshLinks();
     copy.textContent = translations[getLanguage()].copy;
   }
   function close() {
@@ -127,9 +136,8 @@ export function initFinancing(navigation) {
       fields[failed].focus();
       return;
     }
-    reference = `SCHA-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomUUID().slice(0, 8).toUpperCase()}`;
     output.textContent = reference;
-    link.href = createApplicationUrl(reference, getLanguage());
+    refreshLinks();
     formView.hidden = true;
     successView.hidden = false;
     link.focus();
@@ -152,8 +160,6 @@ export function initFinancing(navigation) {
   });
   return {
     open,
-    refresh() {
-      if (reference) link.href = createApplicationUrl(reference, getLanguage());
-    },
+    refresh: refreshLinks,
   };
 }
