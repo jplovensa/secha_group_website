@@ -10,7 +10,11 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--studio-source", required=True, type=Path)
 args = parser.parse_args()
 source = args.studio_source.resolve()
-runtime = ["index.html", "assets", "css", "js", "vendor"]
+if not (source / "index.html").is_file():
+    parser.error("Missing Studio+ entry page: index.html")
+# Publish standalone pages such as playground.html alongside the storefront.
+html_pages = sorted(path.name for path in source.glob("*.html") if path.is_file())
+runtime = [*html_pages, "assets", "css", "js", "vendor"]
 for entry in runtime:
     if not (source / entry).exists():
         parser.error(f"Missing built Studio+ runtime: {entry}")

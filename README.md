@@ -84,7 +84,7 @@ python3 tools/prepare-site.py --studio-source ../sechastudio-integration
 # Open http://127.0.0.1:4175/studio/
 ```
 
-The new app retains its own catalogue, room configurations, cart, opening film and WhatsApp order-request flow. It has no payment or order-storage backend. Future Studio+ changes belong in its repository; deployment integration changes belong here. The home page's Style DNA endpoint remains a separate configuration.
+The new app retains its own catalogue, room configurations, cart, opening film and WhatsApp order-request flow. All root HTML pages are packaged, including the standalone renovation Playground at `/studio/playground.html`, so links from the updated storefront stay within `/studio/`. It has no payment or order-storage backend. Future Studio+ changes belong in its repository; deployment integration changes belong here. The home page's Style DNA endpoint remains a separate configuration.
 
 ## Replayable intro and renovation planning
 
