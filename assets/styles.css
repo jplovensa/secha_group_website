@@ -1903,7 +1903,7 @@ body.intro-open {
     display: none;
   }
   .desktop-nav {
-    gap: 18px;
+    gap: 16px;
   }
 }
 @media (max-width: 850px) {
