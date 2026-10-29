@@ -112,6 +112,26 @@ The Featured Work section uses an explicit Watch button and `preload="none"`; th
 
 ## Private Amar Bank banner click report (GA4)
 
+### Impressions, clicks, sessions and engagement
+
+The existing stream `G-0923E992Z4` now collects `amar_bank_banner_impression` as well as `amar_bank_banner_click`. An impression requires at least 50% of the banner to intersect the viewport continuously for one second while the tab is visible. Leaving the viewport or hiding the tab restarts that timer. Each banner records at most one impression per full page load; repeat clicks are counted individually. This measures viewport exposure, not proof that a person saw the banner or that its image loaded. Browsers without IntersectionObserver do not report impressions. The existing safe page-view configuration lets the Google tag collect native session and engagement events. No custom session events or fabricated engagement values are sent.
+
+After deploying these changes, set up the private GA4 reports:
+
+| Requested metric | GA4 source / report |
+| --- | --- |
+| Impression | Event count filtered to `amar_bank_banner_impression` |
+| Click | Event count filtered to `amar_bank_banner_click` |
+| Session | Reports → Acquisition → Traffic acquisition → Sessions |
+| Engaged session | Traffic acquisition → Engaged sessions |
+| Engagement rate | Traffic acquisition → Engagement rate |
+
+For banner counts, use Explore → Free form with Event name as the row dimension, Event count as the value, and an Event name regex filter `^amar_bank_banner_(impression|click)$`. Use a separate unfiltered Traffic acquisition report (or exploration tab with Session source / medium and the three session metrics) for sessions and engagement. An event-name filter on banner events limits the population and must not be presented as site-wide session totals. Select the same date range and web stream for both reports. These events currently cover the main website; the independently maintained Studio+ app is not instrumented by this module.
+
+GA4 normally calls a session engaged when it lasts longer than 10 seconds, has a key event, or has at least two page/screen views. The stream's configured timer can differ. Engagement rate is engaged sessions divided by sessions. Keep banner impressions and clicks as ordinary events unless the business explicitly wants them to qualify sessions as engaged; marking impressions as key events would change that metric. No additional Enhanced Measurement is needed: keep it disabled to avoid sending bank URLs with personal data.
+
+Validate after deployment using GA4 Realtime or Tag Assistant/DebugView: stay on the visible banner for one second, confirm one impression, scroll away/back and confirm no duplicate, then click and confirm one click. A fresh page load can report another impression. Confirm sessions and engagement in acquisition reports after processing; standard reports may take 24–48 hours. Ad blockers and unavailable Google scripts can reduce collection. Local automated tests verify event wiring and payloads, not delivery to Google's servers. GA4 property/report access is required to create these private reports; repository changes alone do not create them.
+
 `assets/analytics-config.js` holds the owner-supplied public GA4 Web stream measurement ID, `G-0923E992Z4`. Tracking is configured for this stream; clearing the ID disables script loading and event queuing. The independent `assets/analytics-bootstrap.js` head module initializes the Google tag even if an unrelated application module fails. A page view is sent on each home-page load so GA4 can detect active collection, alongside the custom banner counter. Page location and referrer exclude query strings and fragments.
 
 Create an account/property at https://analytics.google.com/ using the owner's Google account. Set the reporting timezone to Asia/Jakarta and currency to IDR, choose a Web data stream with URL `https://www.sechahome.com`, and copy its Measurement ID (`G-…`). **Turn off Enhanced Measurement in this stream before connecting it.** Automatic outbound-link measurement would otherwise send the bank URL, which can contain a phone number and enquiry identifier. The custom event deliberately sends neither.

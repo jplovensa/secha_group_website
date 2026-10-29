@@ -2,6 +2,34 @@ import { analyticsConfig } from "./analytics-config.js";
 import { getLanguage } from "./i18n.js";
 
 export const BANNER_CLICK_EVENT = "amar_bank_banner_click";
+export const BANNER_IMPRESSION_EVENT = "amar_bank_banner_impression";
+
+// One viewable impression per element per page load, including after tab switches.
+export function observeBannerImpression(banner, record) {
+  if (!window.IntersectionObserver) return;
+  let visible = false;
+  let timer;
+  const cancel = () => { window.clearTimeout(timer); timer = undefined; };
+  const update = () => {
+    cancel();
+    if (!visible || document.visibilityState !== "visible") return;
+    timer = window.setTimeout(() => {
+      if (!visible || document.visibilityState !== "visible") return;
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", update);
+      record();
+    }, 1000);
+  };
+  const observer = new window.IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.target !== banner) continue;
+      visible = entry.isIntersecting && entry.intersectionRatio >= 0.5;
+      update();
+    }
+  }, { threshold: [0, 0.5] });
+  document.addEventListener("visibilitychange", update);
+  observer.observe(banner);
+}
 
 export function analyticsPageUrl(value) {
   try {
@@ -31,6 +59,15 @@ export function initBannerAnalytics() {
   });
 
   document.querySelectorAll('.amar-banner[data-placement="banner"]').forEach((banner) => {
+    observeBannerImpression(banner, () => {
+      window.gtag("event", BANNER_IMPRESSION_EVENT, {
+        send_to: id,
+        placement: "amar_bank_banner",
+        language: getLanguage(),
+        value: 1,
+        transport_type: "beacon",
+      });
+    });
     const record = (event) => {
       if (event.type === "click" && event.button !== 0) return;
       if (event.type === "auxclick" && event.button !== 1) return;
